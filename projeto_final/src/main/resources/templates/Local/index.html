@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="htpp://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="pt-BR">
+<head th:include="layout :: head">
+    <link rel="stylesheet" th:href="style.css">
+</head>
+<body>
+    <nav th:replace="layout :: menu"></nav>
+    <main class="container">
+        <h2>Lista dos locais de coleta</h2>
+        <table class="table">
+            <thead>
+                <th>Rua</th>
+                <th>Número</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>lalalala</td>
+                    <td>123</td>
+                    <td>Aventureiro</td>
+                    <td>Joinville</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer th:include="layout :: footer"></footer>
+ </body>
+</html>

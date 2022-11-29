@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="htpp://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="pt-BR">
+<head th:include="layout :: head">
+    <link rel="stylesheet" th:href="style.css">
+</head>
+<body>
+    <nav th:replace="layout :: menu"></nav>
+    <main class="container">
+    <div>
+        <div><h1>Vamos juntos mudar o mundo?</h1></div>
+        <div class="banner">
+            <img th:src="@{/img/arvore.jpg}" class="bg">
+        </div>
+    </div>
+        <div>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem corrupti impedit exercitationem iusto. Esse, ducimus natus ipsam iste doloribus voluptatibus quis temporibus necessitatibus deserunt eaque maiores dolore corrupti laboriosam vel!
+        </div>
+        <div>
+            <a href="/cooperadores/cadastro" class="btn btn-primary">Cadastra-se</a>
+            <a href="/saibamais" class="btn btn-warning">Saiba Mais</a>
+        </div>
+    
+    </main>
+    <footer th:include="layout :: footer"></footer>
+ </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="htpp://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="pt-BR">
+<head th:include="layout :: head">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav th:replace="layout :: menu"></nav>
+    <main class="container">
+        <table class="table">
+            <thead>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>CPF/CNPJ</th>
+                <th>Endereço</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Zezinho</td>
+                    <td>claudiofernando1989@gmail.com</td>
+                    <td>06688774411</td>
+                    <td>Rua lalala, 123</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer th:include="layout :: footer"></footer>
+ </body>
+</html>
