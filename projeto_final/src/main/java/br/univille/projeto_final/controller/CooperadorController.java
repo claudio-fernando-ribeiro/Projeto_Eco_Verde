@@ -16,29 +16,23 @@ import br.univille.projeto_final.service.MaterialService;
 public class CooperadorController {
 
     //Verificar 
- /*    @Autowired
-    private CooperadorRepository repository; */
-    /* 
     @Autowired
-    private CooperadorService service;
-    @Autowired
+    private CooperadorService repository; 
+     
+/*     @Autowired
     private LocalService localService;
     @Autowired
     private MaterialService materialservice;
         // TODO Auto-generated method stub
-
-    @GetMapping
+ */
+/*     @GetMapping
     public ModelAndView index(){
-        var listaCooperador = service.getAll();
+        var listaCooperador = repository.getAll();
         return new ModelAndView("cooperadores/index");
-    }
-*/
+    } */
+
     @GetMapping("/cadastro")
     public ModelAndView cadastro(){
         return new ModelAndView("cooperadores/formCadastro");
     }
 }
-
-
-//teste cristina
-//teste Claudio

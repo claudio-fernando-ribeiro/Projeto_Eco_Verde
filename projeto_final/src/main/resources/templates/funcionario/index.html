@@ -3,11 +3,47 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
 <head th:include="layout :: head"></head>
+<link rel="stylesheet" th:href="funcionario.css"> 
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
-
+        <div class="input-group">
+            <form action="#" method="post">
+                <input type="text" name="search" id="search" placeholder="Digite um nome" required>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>CPF/CNPJ</th>
+                    <th>Endereço</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+<!--                 <tr>
+                    <td>1</td>
+                    <td>Claudio</td>
+                    <td>claudio@gmail.com</td>
+                    <td>00000000000000</td>
+                    <td>Rua lalala, 234</td>
+                </tr> -->
+                <tr th:each="umCooperador : ${listaCooperador}">
+                    <td th:text="${umCooperador.id}"></td>
+                    <td th:text="${umCooperador.nome}"></td>
+                    <td th:text="${umCooperador.email}"></td>
+                    <td th:text="${umCooperador.cpf}"></td>
+                    <td th:text="${umCooperador.endereco}"></td>
+                </tr>
+            </tbody>
+        </table>
     </main>
     <footer th:include="layout :: footer"></footer>
+    <script src="https://kit.fontawesome.com/2856634515.js" crossorigin="anonymous"></script>
  </body>
 </html>

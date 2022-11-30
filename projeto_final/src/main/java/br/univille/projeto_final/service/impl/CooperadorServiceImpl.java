@@ -19,8 +19,8 @@ public class CooperadorServiceImpl
     @Override
     public List<Cooperador> getAll() {
         // TODO Auto-generated method stub
-        return null;
-        //repositorio.findAll();
+        //return null;
+        return repositorio.findAll();
     }
 
 
