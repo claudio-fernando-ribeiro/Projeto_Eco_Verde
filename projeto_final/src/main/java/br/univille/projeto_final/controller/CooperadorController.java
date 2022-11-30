@@ -16,8 +16,8 @@ import br.univille.projeto_final.service.MaterialService;
 public class CooperadorController {
 
     //Verificar 
-    @Autowired
-    private CooperadorRepository repository;
+ /*    @Autowired
+    private CooperadorRepository repository; */
     /* 
     @Autowired
     private CooperadorService service;
