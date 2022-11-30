@@ -11,7 +11,7 @@ import br.univille.projeto_final.service.FuncionarioService;
 @Controller
 @RequestMapping("/funcionarios")
 public class FuncionarioController {
-    /* 
+    
     @Autowired
     private FuncionarioService service;
 
@@ -20,7 +20,7 @@ public class FuncionarioController {
         var listaFuncionarios = service.getAll();
         return new ModelAndView("funcionario/index", "listaFuncionarios", listaFuncionarios);
     }
-    */
+    
     
 
 
