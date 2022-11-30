@@ -6,19 +6,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.univille.projeto_final.service.FuncionarioService;
+import br.univille.projeto_final.service.CooperadorService;
+
 
 @Controller
 @RequestMapping("/funcionarios")
 public class FuncionarioController {
     
     @Autowired
-    private FuncionarioService service;
+    private CooperadorService service;
 
     @GetMapping
     public ModelAndView index(){
-        var listaFuncionarios = service.getAll();
-        return new ModelAndView("funcionario/index", "listaFuncionarios", listaFuncionarios);
+        var listaCooperadores = service.getAll();
+        return new ModelAndView("funcionario/index", "listaCooperadores", listaCooperadores);
     }
     
     

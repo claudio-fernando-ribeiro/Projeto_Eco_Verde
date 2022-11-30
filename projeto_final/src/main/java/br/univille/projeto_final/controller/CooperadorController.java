@@ -24,10 +24,8 @@ public class CooperadorController {
 
     //Verificar 
     @Autowired
-    private CooperadorRepository repository;
-    
-    private CooperadorService service;
-    
+    private CooperadorService repositorio; 
+     
     private LocalService localService;
     
     private MaterialService materialService;
@@ -39,6 +37,7 @@ public class CooperadorController {
         return new ModelAndView("cooperador/index", "listaCooperadores", listaCooperadores);
     }
 
+
     @GetMapping("/cadastro")
     public ModelAndView cadastro(){
         var cooperador = new Cooperador();
@@ -46,6 +45,8 @@ public class CooperadorController {
         dados.put("cooperador",cooperador);
         return new ModelAndView("cooperadores/formCadastro");
     }
+
+}
     
     public ModelAndView alterar(@PathVariable("id") long id){
         var umCooperador = service.findById(id);
@@ -69,5 +70,3 @@ public class CooperadorController {
 }
 
 
-//teste cristina
-//teste Claudio

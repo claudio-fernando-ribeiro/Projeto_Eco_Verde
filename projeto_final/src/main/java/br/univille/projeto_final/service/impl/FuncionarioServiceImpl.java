@@ -13,11 +13,11 @@ import br.univille.projeto_final.service.FuncionarioService;
 public class FuncionarioServiceImpl implements FuncionarioService{
 
     @Autowired
-    private FuncionarioRepository repository;
+    private FuncionarioRepository repositorio;
 
     @Override
     public List<Funcionario> getAll() {
-        return repository.findAll();
+        return repositorio.findAll();
     }
 
     
