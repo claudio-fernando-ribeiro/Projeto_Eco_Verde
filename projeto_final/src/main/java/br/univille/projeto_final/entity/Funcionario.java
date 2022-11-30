@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 public class Funcionario {
 
-   /* @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
@@ -34,5 +34,5 @@ public class Funcionario {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    */
+    
 }

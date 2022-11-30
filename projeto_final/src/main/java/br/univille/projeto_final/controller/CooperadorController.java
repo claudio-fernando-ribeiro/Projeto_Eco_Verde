@@ -18,7 +18,7 @@ public class CooperadorController {
     //Verificar 
     @Autowired
     private CooperadorRepository repository;
-    
+    /* 
     @Autowired
     private CooperadorService service;
     @Autowired
@@ -32,7 +32,7 @@ public class CooperadorController {
         var listaCooperador = service.getAll();
         return new ModelAndView("cooperadores/index");
     }
-
+*/
     @GetMapping("/cadastro")
     public ModelAndView cadastro(){
         return new ModelAndView("cooperadores/formCadastro");
