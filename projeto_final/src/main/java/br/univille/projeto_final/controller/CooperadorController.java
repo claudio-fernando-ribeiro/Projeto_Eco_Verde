@@ -24,7 +24,7 @@ public class CooperadorController {
 
     //Verificar 
     @Autowired
-    private CooperadorService repositorio; 
+    private CooperadorService service; 
      
     private LocalService localService;
     
@@ -46,7 +46,6 @@ public class CooperadorController {
         return new ModelAndView("cooperadores/formCadastro");
     }
 
-}
     
     public ModelAndView alterar(@PathVariable("id") long id){
         var umCooperador = service.findById(id);
@@ -67,6 +66,6 @@ public class CooperadorController {
 
         return new ModelAndView("redirect:/cooperador");
     }
-}
 
+}
 
