@@ -29,7 +29,7 @@ public class Cooperador {
             //Verificar a anotação do CPF
 
 
-   
+   /* 
     //cooperador ->material
     private Cooperador quantidadeCooperador;
 
@@ -48,7 +48,7 @@ public class Cooperador {
     }
     public void setListaDeLocais(Cooperador listaDeLocais) {
         this.listaDeLocais = listaDeLocais;
-    }
+    }*/
 
     public long getId() {
         return id;
