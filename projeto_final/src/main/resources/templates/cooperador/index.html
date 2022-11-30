@@ -8,25 +8,48 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
+        <a href="/cooperadores/cadastro" class="btn btn-primary">Cadastre-se</a>
         <table class="table">
             <thead>
                 <th>Id</th>
                 <th>Nome</th>
                 <th>Email</th>
                 <th>CPF/CNPJ</th>
-                <th>Endereço</th>
+                <th></th>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Zezinho</td>
-                    <td>claudiofernando1989@gmail.com</td>
-                    <td>06688774411</td>
-                    <td>Rua lalala, 123</td>
+                <tr th:each="umCooperador : ${listaCooperadores}">
+                    <td th:text="&{umCooperador.id}"></td>
+                    <td th:text="&{umCooperador.nome}"></td>
+                    <td th:text="&{umCooperador.email}"></td>
+                    <td th:text="&{umCooperador.CPF}"></td>
+                    <td>
+                        <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}" class="btn btn-warning">Alterar</a>
+                        <button class="btn btn-danger js-delete" th:data-id="${umCooperador.id}">Excluir</button>
+
+                    </td>
                 </tr>
             </tbody>
         </table>
     </main>
+
+    <div class="modal" tabindex="-1" id="modalcooperador">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Excluir Cooperador</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza da exlusão?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
+                <button type="button" class="btn btn-secondary" id="btnnao" data-bs-dismiss="modal">Não</button>
+            </div>
+            </div>
+        </div>
+    </div>
     <footer th:include="layout :: footer"></footer>
  </body>
 </html>
