@@ -6,8 +6,9 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
-       <!--  <form th:action="@{/cooperadores/(form)}" 
+         <form th:action="@{/cooperadores/(form)}" 
             method="POST" th:object="${cooperador}"> 
+
             <input type="hidden" th:field="*{id}"> 
                <div class="form-group">
                 <label for="txtnome">Nome:</label> 
@@ -36,9 +37,12 @@
                 th:errors="*{email}"
                 class="alert alert-danger"></p>
             </div>
-       <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
+        
+            <button type="submit" class="btn btn-primary">Enviar</button>
+    </form> 
+    <button type="submit" class="btn btn-primary">Enviar</button>
+
     </main>
-    <footer th:include="layout :: footer">teste cadastro</footer>
+    <footer th:include="layout :: footer"></footer>
     </body>
 </html>

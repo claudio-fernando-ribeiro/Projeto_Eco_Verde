@@ -19,9 +19,10 @@ public class Cooperador {
     @NotBlank(message = "Nome não pode estar em branco")
     private String nome;
     @Column(length = 3000)
-    private String email;
-    @Column(length = 5000)
     private String cpf;
+    @Column(length = 4000)
+    private String email;
+    
 
     //cooperador -> material
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})

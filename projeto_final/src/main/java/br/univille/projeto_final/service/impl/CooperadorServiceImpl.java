@@ -23,12 +23,10 @@ public class CooperadorServiceImpl
         return repositorio.findAll();
     }
 
-
     @Override
     public Cooperador save(Cooperador cooperador) {
         return repositorio.save(cooperador);
     }
-
 
     @Override
     public Cooperador findById(long id) {
@@ -38,7 +36,6 @@ public class CooperadorServiceImpl
         }
         return new Cooperador();
     }
-
 
     @Override
     public void delete(long id) {
