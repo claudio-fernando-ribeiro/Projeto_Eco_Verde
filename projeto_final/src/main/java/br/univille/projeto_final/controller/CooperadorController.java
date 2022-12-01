@@ -33,7 +33,7 @@ public class CooperadorController {
     @GetMapping
     public ModelAndView index(){
         var listaCooperadores = service.getAll();
-        return new ModelAndView("cooperador/index", "listaCooperadores", listaCooperadores);
+        return new ModelAndView("cooperador/cadastro", "listaCooperadores", listaCooperadores);
     }
 
 
@@ -42,7 +42,7 @@ public class CooperadorController {
         var cooperador = new Cooperador();
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("cooperador",cooperador);
-        return new ModelAndView("cooperadores/form");
+        return new ModelAndView("cooperador/formCadastro");
     }
 
     
@@ -50,16 +50,16 @@ public class CooperadorController {
         var umCooperador = service.findById(id);
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("cooperador",umCooperador);
-        return new ModelAndView("cooperador/form",dados);
+        return new ModelAndView("cooperador/formCadastro",dados);
     }
-    @PostMapping(params = "form")
+    @PostMapping(params = "formCadastro")
     public ModelAndView save(@Validated Cooperador cooperador,
                             BindingResult bindingResult){
 
         if(bindingResult.hasErrors()){
             HashMap<String,Object> dados = new HashMap<>();
             dados.put("cooperador", cooperador);
-            return new ModelAndView("cooperador/form",dados);
+            return new ModelAndView("cooperador/formCadastro",dados);
         }
         service.save(cooperador);
 
