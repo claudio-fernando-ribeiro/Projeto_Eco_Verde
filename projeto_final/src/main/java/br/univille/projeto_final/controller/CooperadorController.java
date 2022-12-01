@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.univille.projeto_final.entity.Cooperador;
-import br.univille.projeto_final.repository.CooperadorRepository;
 import br.univille.projeto_final.service.CooperadorService;
-import br.univille.projeto_final.service.LocalService;
-import br.univille.projeto_final.service.MaterialService;
+//import br.univille.projeto_final.service.LocalService;
+//import br.univille.projeto_final.service.MaterialService;
 
 @Controller
 @RequestMapping("/cooperador")
@@ -26,14 +25,16 @@ public class CooperadorController {
     @Autowired
     private CooperadorService service; 
      
-    private LocalService localService;
+    //private LocalService localService;
     
     private MaterialService materialService;
+        // TODO Auto-generated method stub
+
     
     @GetMapping
     public ModelAndView index(){
         var listaCooperadores = service.getAll();
-        return new ModelAndView("cooperador/index", "listaCooperadores", listaCooperadores);
+        return new ModelAndView("cooperador/cadastro", "listaCooperadores", listaCooperadores);
     }
 
  

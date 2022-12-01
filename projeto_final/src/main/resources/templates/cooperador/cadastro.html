@@ -8,25 +8,28 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
+
         <a href="/cooperador/cadastro" class="btn btn-primary">Cadastre-se</a>
-        <table class="table">
+        <table class="table" id="tabcooperadores">
             <thead>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>CPF/CNPJ</th>
-                <th></th>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>CPF/CNPJ</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
             </thead>
             <tbody>
                 <tr th:each="umCooperador : ${listaCooperadores}">
                     <td th:text="&{umCooperador.id}"></td>
                     <td th:text="&{umCooperador.nome}"></td>
+
+                    <td th:text="&{umCooperador.cpf}"></td>
                     <td th:text="&{umCooperador.email}"></td>
-                    <td th:text="&{umCooperador.CPF}"></td>
                     <td>
                         <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}" class="btn btn-warning">Alterar</a>
                         <button class="btn btn-danger js-delete" th:data-id="${umCooperador.id}">Excluir</button>
-
                     </td>
                 </tr>
             </tbody>
