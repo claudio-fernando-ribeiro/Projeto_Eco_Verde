@@ -19,19 +19,17 @@
                     <th>Email</th>
                     <th></th>
                 </tr>
-                
             </thead>
             <tbody>
                 <tr th:each="umCooperador : ${listaCooperadores}">
                     <td th:text="&{umCooperador.id}"></td>
                     <td th:text="&{umCooperador.nome}"></td>
+
                     <td th:text="&{umCooperador.cpf}"></td>
                     <td th:text="&{umCooperador.email}"></td>
-                    
                     <td>
                         <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}" class="btn btn-warning">Alterar</a>
                         <button class="btn btn-danger js-delete" th:data-id="${umCooperador.id}">Excluir</button>
-
                     </td>
                 </tr>
             </tbody>
@@ -49,13 +47,12 @@
                 <p>Tem certeza da exlusão?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="btnnao" data-bs-dismiss="modal">Não</button>
                 <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
+                <button type="button" class="btn btn-secondary" id="btnnao" data-bs-dismiss="modal">Não</button>
             </div>
             </div>
         </div>
     </div>
     <footer th:include="layout :: footer"></footer>
-    <script th:src="@{/scriptcoop.js}"></script>
  </body>
 </html>
