@@ -16,6 +16,7 @@ import br.univille.projeto_final.entity.Cooperador;
 import br.univille.projeto_final.service.CooperadorService;
 //import br.univille.projeto_final.service.LocalService;
 //import br.univille.projeto_final.service.MaterialService;
+import br.univille.projeto_final.service.LocalService;
 
 @Controller
 @RequestMapping("/cooperador")
@@ -25,19 +26,18 @@ public class CooperadorController {
     @Autowired
     private CooperadorService service; 
      
-    //private LocalService localService;
+     //private LocalService localService;
     
-    private MaterialService materialService;
-        // TODO Auto-generated method stub
+/*     private MaterialService materialService;
+        // TODO Auto-generated method stub */
 
     
     @GetMapping
     public ModelAndView index(){
         var listaCooperadores = service.getAll();
-        return new ModelAndView("cooperador/cadastro", "listaCooperadores", listaCooperadores);
+        return new ModelAndView("cooperador/formCadastro", "listaCooperadores", listaCooperadores);
     }
 
- 
     @GetMapping("/cadastro")
     public ModelAndView cadastro(){
         var cooperador = new Cooperador();
@@ -46,7 +46,7 @@ public class CooperadorController {
         return new ModelAndView("cooperador/formCadastro");
     }
 
-    
+    @GetMapping("/aterar/{id}") //Inseri para seguir o padrão do walter
     public ModelAndView alterar(@PathVariable("id") long id){
         var umCooperador = service.findById(id);
         HashMap<String,Object> dados = new HashMap<>();
@@ -67,6 +67,4 @@ public class CooperadorController {
 
         return new ModelAndView("redirect:/cooperador");
     }
-
 }
-
