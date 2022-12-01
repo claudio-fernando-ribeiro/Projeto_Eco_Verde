@@ -1,5 +1,5 @@
 (function(){
-    $("#").on("click",".js-delete", function(){
+    $("#tabcooperadores").on("click",".js-delete", function(){
         let botaoClicado  = $(this);
         $("#btnsim").attr("data-id",botaoClicado.attr("data-id"));
         $("#modalcooperador").modal("show");

@@ -19,7 +19,7 @@ import br.univille.projeto_final.service.CooperadorService;
 import br.univille.projeto_final.service.LocalService;
 
 @Controller
-@RequestMapping("/cooperador")
+@RequestMapping("/cooperadores")
 public class CooperadorController {
 
     //Verificar 
@@ -28,8 +28,9 @@ public class CooperadorController {
      
      //private LocalService localService;
     
-/*     private MaterialService materialService;
-        // TODO Auto-generated method stub */
+
+    //private MaterialService materialService;
+        // TODO Auto-generated method stub
 
     
     @GetMapping
@@ -43,7 +44,7 @@ public class CooperadorController {
         var cooperador = new Cooperador();
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("cooperador",cooperador);
-        return new ModelAndView("cooperador/formCadastro");
+        return new ModelAndView("cooperador/formCadastro", dados);
     }
 
     @GetMapping("/aterar/{id}") //Inseri para seguir o padrão do walter
@@ -54,7 +55,7 @@ public class CooperadorController {
         return new ModelAndView("cooperador/formCadastro",dados);
     }
     
-    @PostMapping(params = "formCadastro")
+    @PostMapping(params = "formcadastro")
     public ModelAndView save(@Validated Cooperador cooperador,
                             BindingResult bindingResult){
 
@@ -64,7 +65,17 @@ public class CooperadorController {
             return new ModelAndView("cooperador/formCadastro",dados);
         }
         service.save(cooperador);
-
-        return new ModelAndView("redirect:/cooperador");
+        return new ModelAndView("redirect:/cooperadores");
     }
+    @GetMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable("id") long id){
+
+        service.delete(id);
+
+        return new ModelAndView("redirect:/cooperadores");
+    }
+
+
+}
+
 }
