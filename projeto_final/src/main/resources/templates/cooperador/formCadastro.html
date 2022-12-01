@@ -6,12 +6,12 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
-
-        <form th:action="@{/funcionario/(form)}" 
-        method="POST" th:object="${funcionario}"> <!--Action é para onde vai nossa informação, nesse caso vai para o controlador dos clientes, essa é uma linguagem vinculada ao thymeleaf / th:object é como se eu dissese que ele vai receber algo que é {cliente} -->
-            <input type="hidden" th:field="*{id}"> <!--Aqui eu escondo a opção do usuário, de forma que consigo manter o mesmo cliente pelo id, sem inserir um novo.-->
+<!--  
+        <form th:action="@{/cooperadores/(form)}" 
+        method="POST" th:object="${cooperador}"> Action é para onde vai nossa informação, nesse caso vai para o controlador dos clientes, essa é uma linguagem vinculada ao thymeleaf / th:object é como se eu dissese que ele vai receber algo que é {cliente}
+            <input type="hidden" th:field="*{id}"> Aqui eu escondo a opção do usuário, de forma que consigo manter o mesmo cliente pelo id, sem inserir um novo.
             <div class="form-group">
-                <label for="txtnome">Nome: </label> <!--th:field, informo que esse elemento {}, é parte de um todo, no caso, o nome é parte de um cliente -->
+                <label for="txtnome">Nome: </label> th:field, informo que esse elemento {}, é parte de um todo, no caso, o nome é parte de um cliente
                 <input type="text" th:field="*{nome}" class="form-control" id="txtnome">
                 <p th:if="${#fields.hasErrors('nome')}"
                 th:errors="*{nome}"
@@ -42,9 +42,9 @@ DEPOIS ALTERAR O FIEL E ID
                 <p th:if="${#fields.hasErrors('dataNascimento')}"
                 th:errors="*{dataNascimento}"
                 class="alert alert-danger"></p>
-            </div>
+            </div> -->
 
- -->        <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
     </main>
     <footer th:include="layout :: footer"></footer>
