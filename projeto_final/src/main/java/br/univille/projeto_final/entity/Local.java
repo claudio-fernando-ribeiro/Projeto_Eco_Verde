@@ -1,7 +1,5 @@
 package br.univille.projeto_final.entity;
 
-import java.util.ArrayList;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +14,7 @@ public class Local {
     private long id;
     @Column(length = 1000, nullable = false)
     private String nome;
-    
+
     public long getId() {
         return id;
     }
@@ -29,6 +27,4 @@ public class Local {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    
 }

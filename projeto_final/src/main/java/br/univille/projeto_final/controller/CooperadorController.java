@@ -18,7 +18,7 @@ import br.univille.projeto_final.service.CooperadorService;
 //import br.univille.projeto_final.service.MaterialService;
 
 @Controller
-@RequestMapping("/cooperadores")
+@RequestMapping("/cooperador")
 public class CooperadorController {
 
     //Verificar 
@@ -27,8 +27,9 @@ public class CooperadorController {
      
     //private LocalService localService;
     
-    //private MaterialService materialService;
+    private MaterialService materialService;
         // TODO Auto-generated method stub
+
     
     @GetMapping
     public ModelAndView index(){
@@ -36,7 +37,7 @@ public class CooperadorController {
         return new ModelAndView("cooperador/cadastro", "listaCooperadores", listaCooperadores);
     }
 
-
+ 
     @GetMapping("/cadastro")
     public ModelAndView cadastro(){
         var cooperador = new Cooperador();
@@ -52,6 +53,7 @@ public class CooperadorController {
         dados.put("cooperador",umCooperador);
         return new ModelAndView("cooperador/formCadastro",dados);
     }
+    
     @PostMapping(params = "formCadastro")
     public ModelAndView save(@Validated Cooperador cooperador,
                             BindingResult bindingResult){

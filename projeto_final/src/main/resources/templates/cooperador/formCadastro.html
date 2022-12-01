@@ -13,6 +13,7 @@
                 <label for="txtnome">Nome:</label> 
                  <input type="text" th:field="*{nome}" 
                     class="form-control" id="txtnome">
+
                 <p th:if="${#fields.hasErrors('nome')}"
                     th:errors="*{nome}"
                     class="alert alert-danger"></p>
@@ -26,7 +27,7 @@
                     th:errors="*{cpf}"
                     class="alert alert-danger"></p>
             </div>
-        
+    
             <div class="form-group">
                 <label for="txtemail">Email:</label>
                 <input type="text" th:field="*{email}" 
@@ -35,7 +36,6 @@
                 th:errors="*{email}"
                 class="alert alert-danger"></p>
             </div>
- -->
        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
     </main>
