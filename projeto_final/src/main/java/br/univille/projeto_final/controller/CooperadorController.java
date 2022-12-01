@@ -16,7 +16,7 @@ import br.univille.projeto_final.entity.Cooperador;
 import br.univille.projeto_final.service.CooperadorService;
 //import br.univille.projeto_final.service.LocalService;
 //import br.univille.projeto_final.service.MaterialService;
-//import br.univille.projeto_final.service.LocalService;
+import br.univille.projeto_final.service.LocalService;
 
 @Controller
 @RequestMapping("/cooperadores")
@@ -27,6 +27,8 @@ public class CooperadorController {
     private CooperadorService service; 
      
      //private LocalService localService;
+    
+
     //private MaterialService materialService;
         // TODO Auto-generated method stub
 
@@ -34,7 +36,7 @@ public class CooperadorController {
     @GetMapping
     public ModelAndView index(){
         var listaCooperadores = service.getAll();
-        return new ModelAndView("cooperador/index", "listaCooperadores", listaCooperadores);
+        return new ModelAndView("cooperador/formCadastro", "listaCooperadores", listaCooperadores);
     }
 
     @GetMapping("/cadastro")
@@ -45,17 +47,6 @@ public class CooperadorController {
         return new ModelAndView("cooperador/formCadastro", dados);
     }
 
-    @PostMapping(params = "formCadastro")
-    public ModelAndView save(@Validated Cooperador cooperador, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
-            HashMap<String,Object> dados = new HashMap<>();
-            dados.put("cooperador", cooperador);
-            return new ModelAndView("cooperador/formCadastro",dados);
-        }
-        service.save(cooperador);
-        return new ModelAndView("redirect:/cooperadores");
-    }
-
     @GetMapping("/aterar/{id}") //Inseri para seguir o padrão do walter
     public ModelAndView alterar(@PathVariable("id") long id){
         var umCooperador = service.findById(id);
@@ -64,9 +55,27 @@ public class CooperadorController {
         return new ModelAndView("cooperador/formCadastro",dados);
     }
     
-    @GetMapping("/delete/{id}")
-    public ModelAndView delete(@PathVariable("id") long id){
-        service.delete(id);
+    @PostMapping(params = "formcadastro")
+    public ModelAndView save(@Validated Cooperador cooperador,
+                            BindingResult bindingResult){
+
+        if(bindingResult.hasErrors()){
+            HashMap<String,Object> dados = new HashMap<>();
+            dados.put("cooperador", cooperador);
+            return new ModelAndView("cooperador/formCadastro",dados);
+        }
+        service.save(cooperador);
         return new ModelAndView("redirect:/cooperadores");
     }
+    @GetMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable("id") long id){
+
+        service.delete(id);
+
+        return new ModelAndView("redirect:/cooperadores");
+    }
+
+
+}
+
 }
