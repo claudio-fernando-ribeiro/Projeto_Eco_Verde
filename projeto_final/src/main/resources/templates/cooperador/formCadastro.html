@@ -6,9 +6,10 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
-        
-<!--           <form th:action="@{/cooperadores/(form)}" 
+
+         <form th:action="@{/cooperadores/(form)}" n
             method="POST" th:object="${cooperador}"> 
+
             <input type="hidden" th:field="*{id}"> 
 
             <div class="form-group">
@@ -37,9 +38,12 @@
                 th:errors="*{email}"
                 class="alert alert-danger"></p>
             </div>
-        </form> 
- -->
+
+    </form> 
+
+
        <button type="submit" class="btn btn-primary">Enviar</button>
+
     </main>
     <footer th:include="layout :: footer"></footer>
     </body>
