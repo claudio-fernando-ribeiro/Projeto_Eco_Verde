@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.univille.projeto_final.entity.Cooperador;
-import br.univille.projeto_final.repository.CooperadorRepository;
 import br.univille.projeto_final.service.CooperadorService;
-import br.univille.projeto_final.service.LocalService;
-import br.univille.projeto_final.service.MaterialService;
+//import br.univille.projeto_final.service.LocalService;
+//import br.univille.projeto_final.service.MaterialService;
 
 @Controller
 @RequestMapping("/cooperadores")
@@ -26,9 +25,9 @@ public class CooperadorController {
     @Autowired
     private CooperadorService service; 
      
-    private LocalService localService;
+    //private LocalService localService;
     
-    private MaterialService materialService;
+    //private MaterialService materialService;
         // TODO Auto-generated method stub
     
     @GetMapping
@@ -43,7 +42,7 @@ public class CooperadorController {
         var cooperador = new Cooperador();
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("cooperador",cooperador);
-        return new ModelAndView("cooperadores/formCadastro");
+        return new ModelAndView("cooperadores/form");
     }
 
     
@@ -51,16 +50,16 @@ public class CooperadorController {
         var umCooperador = service.findById(id);
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("cooperador",umCooperador);
-        return new ModelAndView("cooperador/formCadastro",dados);
+        return new ModelAndView("cooperador/form",dados);
     }
-    @PostMapping(params = "formCadastro")
+    @PostMapping(params = "form")
     public ModelAndView save(@Validated Cooperador cooperador,
                             BindingResult bindingResult){
 
         if(bindingResult.hasErrors()){
             HashMap<String,Object> dados = new HashMap<>();
             dados.put("cooperador", cooperador);
-            return new ModelAndView("cooperador/formCadastro",dados);
+            return new ModelAndView("cooperador/form",dados);
         }
         service.save(cooperador);
 

@@ -8,14 +8,18 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
+
         <a href="/cooperadores/cadastro" class="btn btn-primary">Cadastre-se</a>
-        <table class="table">
+        <table class="table" id="tabcooperadores">
             <thead>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>CPF/CNPJ</th>
-                <th>Email</th>
-                <th></th>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>CPF/CNPJ</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+                
             </thead>
             <tbody>
                 <tr th:each="umCooperador : ${listaCooperadores}">
@@ -45,12 +49,13 @@
                 <p>Tem certeza da exlusão?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
                 <button type="button" class="btn btn-secondary" id="btnnao" data-bs-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
             </div>
             </div>
         </div>
     </div>
     <footer th:include="layout :: footer"></footer>
+    <script th:src="@{/scriptcoop.js}"></script>
  </body>
 </html>

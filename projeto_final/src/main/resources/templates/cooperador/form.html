@@ -6,32 +6,33 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
-
-        <form th:action="@{/funcionarios/(form)}" 
-        method="POST" th:object="${funcionarios}"> <!--Action é para onde vai nossa informação, nesse caso vai para o controlador dos clientes, essa é uma linguagem vinculada ao thymeleaf / th:object é como se eu dissese que ele vai receber algo que é {cliente} -->
+        <form th:action="@{/cooperadores/(form)}" 
+            method="POST" th:object="${cooperador}"> <!--Action é para onde vai nossa informação, nesse caso vai para o controlador dos clientes, essa é uma linguagem vinculada ao thymeleaf / th:object é como se eu dissese que ele vai receber algo que é {cliente} -->
            
             <input type="hidden" th:field="*{id}"> <!--Aqui eu escondo a opção do usuário, de forma que consigo manter o mesmo cliente pelo id, sem inserir um novo.-->
             <div class="form-group">
-                <label for="txtnome">Nome: </label> <!--th:field, informo que esse elemento {}, é parte de um todo, no caso, o nome é parte de um cliente -->
+                <label for="txtnome">Nome:</label> <!--th:field, informo que esse elemento {}, é parte de um todo, no caso, o nome é parte de um cliente -->
                 <input type="text" th:field="*{nome}" 
                     class="form-control" id="txtnome">
                 <p th:if="${#fields.hasErrors('nome')}"
-                th:errors="*{nome}"
-                class="alert alert-danger"></p>
+                    th:errors="*{nome}"
+                    class="alert alert-danger"></p>
             </div>
 
             <!--DEPOIS ALTERAR O FIELD E O ID-->
             <div class="form-group">
                 <label for="txtcpf">CPF:</label>
-                <input type="text" th:field="*{cpf}" class="form-control" id="txtendereco">
+                <input type="text" th:field="*{cpf}" 
+                    class="form-control" id="txtcpf">
                 <p th:if="${#fields.hasErrors('cpf')}"
-                th:errors="*{cpf}"
-                class="alert alert-danger"></p>
+                    th:errors="*{cpf}"
+                    class="alert alert-danger"></p>
             </div>
             <!--DEPOIS ALTERAR O FIELD E O ID-->
             <div class="form-group">
                 <label for="txtemail">Email:</label>
-                <input type="text" th:field="*{email}" class="form-control" id="txtemail">
+                <input type="text" th:field="*{email}" 
+                    class="form-control" id="txtemail">
                 <p th:if="${#fields.hasErrors('email')}"
                 th:errors="*{email}"
                 class="alert alert-danger"></p>
@@ -40,6 +41,6 @@
        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
     </main>
-    <footer th:include="layout :: footer"></footer>
- </body>
+    <footer th:include="layout :: footer">teste cadastro</footer>
+    </body>
 </html>
