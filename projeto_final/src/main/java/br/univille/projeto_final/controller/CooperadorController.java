@@ -36,7 +36,7 @@ public class CooperadorController {
     @GetMapping
     public ModelAndView index(){
         var listaCooperadores = service.getAll();
-        return new ModelAndView("cooperador/formCadastro", "listaCooperadores", listaCooperadores);
+        return new ModelAndView("cooperador/index", "listaCooperadores", listaCooperadores);
     }
 
     @GetMapping("/cadastro")
@@ -55,7 +55,7 @@ public class CooperadorController {
         return new ModelAndView("cooperador/formCadastro",dados);
     }
     
-    @PostMapping(params = "formcadastro")
+    @PostMapping(params = "formCadastro")
     public ModelAndView save(@Validated Cooperador cooperador,
                             BindingResult bindingResult){
 
@@ -74,8 +74,4 @@ public class CooperadorController {
 
         return new ModelAndView("redirect:/cooperadores");
     }
-
-
-}
-
 }
