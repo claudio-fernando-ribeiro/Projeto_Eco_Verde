@@ -7,7 +7,7 @@
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
 
-         <form th:action="@{/cooperadores/(form)}" n
+         <form th:action="@{/cooperadores/(formCadastro)}"
             method="POST" th:object="${cooperador}"> 
 
             <input type="hidden" th:field="*{id}"> 
@@ -39,12 +39,9 @@
                 class="alert alert-danger"></p>
             </div>
 
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </form> 
-
-
-       <button type="submit" class="btn btn-primary">Enviar</button>
-
-    </main>
+</main>
     <footer th:include="layout :: footer"></footer>
     </body>
 </html>

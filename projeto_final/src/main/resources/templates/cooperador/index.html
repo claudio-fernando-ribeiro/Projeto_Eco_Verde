@@ -22,11 +22,10 @@
             </thead>
             <tbody>
                 <tr th:each="umCooperador : ${listaCooperadores}">
-                    <td th:text="&{umCooperador.id}"></td>
-                    <td th:text="&{umCooperador.nome}"></td>
-
-                    <td th:text="&{umCooperador.cpf}"></td>
-                    <td th:text="&{umCooperador.email}"></td>
+                    <td th:text="${umCooperador.id}"></td>
+                    <td th:text="${umCooperador.nome}"></td>
+                    <td th:text="${umCooperador.cpf}"></td>
+                    <td th:text="${umCooperador.email}"></td>
                     <td>
                         <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}" class="btn btn-warning">Alterar</a>
                         <button class="btn btn-danger js-delete" th:data-id="${umCooperador.id}">Excluir</button>
