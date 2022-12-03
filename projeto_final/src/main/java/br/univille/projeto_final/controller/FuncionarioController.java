@@ -22,7 +22,4 @@ public class FuncionarioController {
         return new ModelAndView("funcionario/index", "listaCooperadores", listaCooperadores);
     }
     
-    
-
-
 }
