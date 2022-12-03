@@ -15,12 +15,17 @@ public class Cooperador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    
     @Column(length = 1000, nullable = false)
     @NotBlank(message = "Nome não pode estar em branco")
     private String nome;
-    @Column(length = 3000)
+
+    @Column(length = 3000, nullable = false)
+    @NotBlank (message = "CPF não pode ser em branco")
     private String cpf;
-    @Column(length = 4000)
+
+    @Column(length = 4000, nullable = false)
+    @NotBlank (message = "Email não pode ser em branco")
     private String email;
     
 

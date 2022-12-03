@@ -46,13 +46,19 @@
                 <p>Tem certeza da exlusão?</p>
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="btnnao" 
+                    data-bs-dismiss="modal">Não</button>
                 <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
-                <button type="button" class="btn btn-secondary" id="btnnao" data-bs-dismiss="modal">Não</button>
             </div>
             </div>
         </div>
     </div>
     <footer th:include="layout :: footer"></footer>
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script th:src="@{/scriptcoop.js}"></script>
  </body>
 </html>

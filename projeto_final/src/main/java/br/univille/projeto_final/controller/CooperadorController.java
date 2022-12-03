@@ -47,7 +47,7 @@ public class CooperadorController {
         return new ModelAndView("cooperador/formCadastro", dados);
     }
 
-    @GetMapping("/aterar/{id}") //Inseri para seguir o padrão do walter
+    @GetMapping("/alterar/{id}") //Inseri para seguir o padrão do walter
     public ModelAndView alterar(@PathVariable("id") long id){
         var umCooperador = service.findById(id);
         HashMap<String,Object> dados = new HashMap<>();
