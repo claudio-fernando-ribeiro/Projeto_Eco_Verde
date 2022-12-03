@@ -17,7 +17,6 @@ public class LocalServiceImpl implements LocalService {
 
     @Override
     public List<Local> getAll() {
-        // TODO Auto-generated method stub
         return repositorio.findAll();
     }
     

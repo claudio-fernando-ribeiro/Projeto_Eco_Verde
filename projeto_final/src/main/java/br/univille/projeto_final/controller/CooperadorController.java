@@ -22,11 +22,11 @@ import br.univille.projeto_final.service.LocalService;
 @RequestMapping("/cooperadores")
 public class CooperadorController {
 
-    //Verificar 
     @Autowired
     private CooperadorService service; 
-     
-     //private LocalService localService;
+
+    @Autowired 
+    private LocalService localService;
     
 
     //private MaterialService materialService;
@@ -65,13 +65,13 @@ public class CooperadorController {
             return new ModelAndView("cooperador/formCadastro",dados);
         }
         service.save(cooperador);
-        return new ModelAndView("redirect:/cooperadores");
+        return new ModelAndView("redirect:/local");
     }
     @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") long id){
 
         service.delete(id);
 
-        return new ModelAndView("redirect:/cooperadores");
+        return new ModelAndView("redirect:/saibacooperadores");
     }
 }

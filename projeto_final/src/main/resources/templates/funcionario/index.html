@@ -7,44 +7,54 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
-        <div class="input-group">
-            <form action="#" method="post">
-                <input type="text" name="search" id="pesquisa" placeholder="Digite um nome" required>
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-        </div>
-        <table class="table">
+
+        <a href="/cooperadores/cadastro" class="btn btn-primary">Cadastre-se</a>
+        <table class="table" id="tabcooperadores">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Nome</th>
-                    <th>Email</th>
                     <th>CPF/CNPJ</th>
-                    <th>Endereço</th>
-                    <th></th>
+                    <th>Email</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-<!--                 <tr>
-                    <td>1</td>
-                    <td>Claudio</td>
-                    <td>claudio@gmail.com</td>
-                    <td>00000000000000</td>
-                    <td>Rua lalala, 234</td>
-                </tr> -->
-                <tr th:each="umCooperador : ${listaCooperador}">
+                <tr th:each="umCooperador : ${listaCooperadores}">
                     <td th:text="${umCooperador.id}"></td>
                     <td th:text="${umCooperador.nome}"></td>
-                    <td th:text="${umCooperador.email}"></td>
                     <td th:text="${umCooperador.cpf}"></td>
-                    <td th:text="${umCooperador.endereco}"></td>
+                    <td th:text="${umCooperador.email}"></td>
+                    <td>
+                        <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}" class="btn btn-warning">Alterar</a>
+                        <button class="btn btn-danger js-delete" th:data-id="${umCooperador.id}">Excluir</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
-        <a href="/local/novo" class="btn btn-primary">Novo local</a>
     </main>
-    <footer th:include="layout :: footer"></footer>
-    <script src="https://kit.fontawesome.com/2856634515.js" crossorigin="anonymous"></script>
- </body>
+
+        <div class="modal" tabindex="-1" id="modalcooperador">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Excluir Cooperador</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza da exlusão?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btncancelar" 
+                        data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <footer th:include="layout :: footer"></footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script th:src="@{/scriptcoop.js}"></script>
+    </body>
 </html>
