@@ -16,10 +16,8 @@
             url: "/cooperadores/delete/" + id,
             method: "GET",
             success: function(){
-                window.location.href="/cooperadores";
+                window.location.href="/funcionarios";
             }
         });
     });
-
-
 })();

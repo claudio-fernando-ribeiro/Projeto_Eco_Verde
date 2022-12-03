@@ -14,9 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.univille.projeto_final.entity.Cooperador;
 import br.univille.projeto_final.service.CooperadorService;
-//import br.univille.projeto_final.service.LocalService;
-//import br.univille.projeto_final.service.MaterialService;
-import br.univille.projeto_final.service.LocalService;
 
 @Controller
 @RequestMapping("/cooperadores")
@@ -24,14 +21,6 @@ public class CooperadorController {
 
     @Autowired
     private CooperadorService service; 
-
-    @Autowired 
-    private LocalService localService;
-    
-
-    //private MaterialService materialService;
-        // TODO Auto-generated method stub
-
     
     @GetMapping
     public ModelAndView index(){
@@ -47,7 +36,7 @@ public class CooperadorController {
         return new ModelAndView("cooperador/formCadastro", dados);
     }
 
-    @GetMapping("/alterar/{id}") //Inseri para seguir o padrão do walter
+    @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id") long id){
         var umCooperador = service.findById(id);
         HashMap<String,Object> dados = new HashMap<>();
@@ -69,9 +58,7 @@ public class CooperadorController {
     }
     @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") long id){
-
         service.delete(id);
-
-        return new ModelAndView("redirect:/saibacooperadores");
+        return new ModelAndView("redirect:/funcionarios");
     }
 }
