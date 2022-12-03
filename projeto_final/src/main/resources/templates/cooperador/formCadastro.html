@@ -40,9 +40,13 @@
                 class="alert alert-danger"></p>
             </div>
 
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary js-sucesso" id="btnenviar">Enviar</button>
+
     </form> 
 </main>
     <footer th:include="layout :: footer"></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script th:src="@{/scriptCadastro.js}"></script>
     </body>
 </html>
