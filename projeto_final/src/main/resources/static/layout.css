@@ -6,8 +6,9 @@ nav {
     border: olivedrab 3px solid;
 }
 
+/* Mudei aqui (tamanho de 13.5 para 15), porque estava dando uma mudança no tamanho da imagem quando navegava entre os links */
 nav div a img {
-    height: 13.5vh;
+    height: 15.0vh; 
 }
 
 div .navbar-nav a{

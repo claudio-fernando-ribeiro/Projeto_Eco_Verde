@@ -1,7 +1,6 @@
 package br.univille.projeto_final.controller;
 
 import java.util.HashMap;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -56,6 +55,7 @@ public class CooperadorController {
         service.save(cooperador);
         return new ModelAndView("redirect:/local");
     }
+
     @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") long id){
         service.delete(id);

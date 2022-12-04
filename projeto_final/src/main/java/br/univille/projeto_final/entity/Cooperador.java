@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 
-
 @Entity
 public class Cooperador {
     @Id
@@ -28,7 +27,6 @@ public class Cooperador {
     @NotBlank (message = "Email não pode ser em branco")
     private String email;
     
-
     //cooperador -> material
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Cooperador quantidadeCooperador;
@@ -49,7 +47,6 @@ public class Cooperador {
     public void setListaDeLocais(Cooperador listaDeLocais) {
         this.listaDeLocais = listaDeLocais;
     }
-
     public long getId() {
         return id;
     }
@@ -74,5 +71,4 @@ public class Cooperador {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    
 }

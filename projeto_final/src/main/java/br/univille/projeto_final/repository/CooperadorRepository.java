@@ -10,5 +10,4 @@ import br.univille.projeto_final.entity.Cooperador;
 @Repository
 public interface CooperadorRepository extends JpaRepository<Cooperador, Long> {
     List<Cooperador> findByNomeIgnoreCaseContaining(@Param("nome") String nome);
-
 }
