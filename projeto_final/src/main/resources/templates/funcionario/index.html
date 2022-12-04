@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:th="htpp://www.thymeleaf.org"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="htpp://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
+
 <head th:include="layout :: head"></head>
-<link rel="stylesheet" th:href="funcionario.css"> 
+<link rel="stylesheet" th:href="funcionario.css">
+
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
 
-        <a href="/cooperadores/cadastro" class="btn btn-primary">Novo cooperador</a>
+        <br>
+        <div>
+            <a href="/cooperadores/cadastro" class="btn btn-primary">Cadastre-se</a>
+        </div>
+        <br>
+            <!--
+            <a href="/cooperadores/cadastro" class="btn btn-primary">Novo cooperador</a> -->
+
         <table class="table" id="tabcooperadores">
             <thead>
                 <tr>
@@ -26,18 +34,26 @@
                     <td th:text="${umCooperador.cpf}"></td>
                     <td th:text="${umCooperador.email}"></td>
                     <td>
+                    
+                        <!-- BRANCH CRISTINA
+                        <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}"
+                            class="btn btn-warning">Alterar</a>
+                        <button class="btn btn-danger js-delete" th:data-id="${umCooperador.id}">Excluir</button>
+                        -->
                         <a href="" class="btn btn-success btn-sm">Adicionar Resíduos</a>  <!-- "@{'/cooperadores/somar/' + ${umCooperador.id.somar}}" -->
-                        <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}" class="btn btn-warning btn-sm">Alterar</a>
+                        <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}" 
+                            class="btn btn-warning btn-sm">Alterar</a>
                         <button class="btn btn-danger btn-sm js-delete" th:data-id="${umCooperador.id}">Excluir</button>
+
                     </td>
                 </tr>
             </tbody>
         </table>
     </main>
 
-        <div class="modal" tabindex="-1" id="modalcooperador">
-            <div class="modal-dialog">
-                <div class="modal-content">
+    <div class="modal" tabindex="-1" id="modalcooperador">
+        <div class="modal-dialog">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Excluir Cooperador</h5>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
@@ -46,16 +62,17 @@
                     <p>Tem certeza da exlusão?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="btncancelar" 
+                    <button type="button" class="btn btn-secondary" id="btncancelar"
                         data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
                 </div>
-                </div>
             </div>
         </div>
-        <footer th:include="layout :: footer"></footer>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script th:src="@{/scriptcoop.js}"></script>
-    </body>
+    </div>
+    <footer th:include="layout :: footer"></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script th:src="@{/scriptcoop.js}"></script>
+</body>
+
 </html>

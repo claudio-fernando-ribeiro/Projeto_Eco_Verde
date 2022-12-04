@@ -1,31 +1,34 @@
 <!DOCTYPE html>
-<html xmlns:th="htpp://www.thymeleaf.org"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="htpp://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
+
 <head th:include="layout :: head">
 </head>
 <link rel="stylesheet" th:href="saibaMais.css"> <!-- Esse css é somente da página home -->
+
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main>
         <h1>Sustentabilidade</h1>
-        <div class="banner">
-            <img th:src="@{/img/planta.jpg}" class="bg">
-        </div>
+
         <div class="texto">
-            <p>Hoje a decomposição de resíduos orgânicos é responsável por mais de 49% do metano (CH4) emitido a atmosfera. O CH4 é cerca de 27 vezes mais prejudicial a camada de ozônio do que o gás carbônico (CO2), ou seja, cada unidade de CH4 equivale a 27 unidades de CO2. Desta forma CH4 tem se tornado um dos principais responsáveis pelo aquecimento global, e todas as catástrofes que decorrem dele.</p>
-            <p>Uma das formas de controlar isso é através da compostagem, que se feita da forma correta evita a proliferação das bactérias responsáveis pela emissão de CH4. E melhor do que isso, ainda é a fonte de um rico composto orgânico que pode ser transformado em um adubo de altíssima qualidade, bem como em fertilizante líquido orgânico igualmente bom.</p>
-            <p>Fazendo parte do nosso projeto você vai contribuir para um planeta mais sustentável, além de diminuir a pega orgânica sua e da sua família gerando um menor impacto ambiental, protegendo o planeta para as próximas. Além disso vai fortalecer a economia local, gerando emprego e renda a diversas pessoas da sua região, transformando o mundo e vida das pessoas.</p>
-            <p>Além disso você vai passa a participar de um programa de pontos que posteriormente poderão ser trocados por diversos produtos. Venha fazer parte da mudança que buscamos para o mundo. Cadastra-se.</p>
-        </div>
-        <div class="banner">
-            <img th:src="@{/img/horta.jpg}" class="bg">
-        </div>
-        <div>
-            <h2>Venha fazer parte.</h2>
-            <a href="/cooperador/cadastro" class="btn btn-primary">Cadastra-se</a>
+            <p>Hoje a decomposição de resíduos orgânicos é responsável por mais de 49% do metano (CH4) emitido a
+                atmosfera. O CH4 é cerca de 27 vezes mais prejudicial a camada de ozônio do que o gás carbônico (CO2),
+                ou seja, cada unidade de CH4 equivale a 27 unidades de CO2. Desta forma CH4 tem se tornado um dos
+                principais responsáveis pelo aquecimento global, e todas as catástrofes que decorrem dele.</p>
+            <p>Uma das formas de controlar isso é através da compostagem, que se feita da forma correta evita a
+                proliferação das bactérias responsáveis pela emissão de CH4. E melhor do que isso, ainda é a fonte de um
+                rico composto orgânico que pode ser transformado em um adubo de altíssima qualidade, bem como em
+                fertilizante líquido orgânico igualmente bom.</p>
+            <p>Fazendo parte do nosso projeto você vai contribuir para um planeta mais sustentável, além de diminuir a
+                pega orgânica sua e da sua família gerando um menor impacto ambiental, protegendo o planeta para as
+                próximas. Além disso vai fortalecer a economia local, gerando emprego e renda a diversas pessoas da sua
+                região, transformando o mundo e vida das pessoas.</p>
+            <p>Além disso você vai passa a participar de um programa de pontos que posteriormente poderão ser trocados
+                por diversos produtos. Venha fazer parte da mudança que buscamos para o mundo. Cadastra-se.</p>
         </div>
     </main>
     <footer th:include="layout :: footer"></footer>
- </body>
+</body>
+
 </html>
