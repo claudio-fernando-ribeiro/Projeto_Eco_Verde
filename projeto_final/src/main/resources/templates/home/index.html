@@ -1,28 +1,62 @@
 <!DOCTYPE html>
-<html xmlns:th="htpp://www.thymeleaf.org"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="htpp://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
+
 <head th:include="layout :: head">
 </head>
 <link rel="stylesheet" th:href="home.css"> <!-- Esse css é somente da página home -->
+
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
-    <div>
-        <div><h1>Vamos juntos mudar o mundo?</h1></div>
-        <div class="banner">
-            <img th:src="@{/img/arvore.jpg}" class="bg">
-        </div>
-    </div>
+        <br>
         <div>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem corrupti impedit exercitationem iusto. Esse, ducimus natus ipsam iste doloribus voluptatibus quis temporibus necessitatibus deserunt eaque maiores dolore corrupti laboriosam vel!
+            <div>
+                <h1>Vamos juntos mudar o mundo?</h1>
+            </div>
         </div>
-        <div>
+        <div class="post-card">
+            <h5>Bem vindo a Eco Verde! Uma empresa preocupada com o bem estar ambiental, em nosa plataforma você irá
+                encontrar diversos conteúdos relacionados a preservação ambiental e pipipopopo </h5>
+            <h5>Bem vindo a Eco Verde! Uma empresa preocupada com o bem estar ambiental, em nosa plataforma você irá
+                encontrar diversos conteúdos relacionados a preservação ambiental e pipipopopo </h5>
+            <h5>Bem vindo a Eco Verde! Uma empresa preocupada com o bem estar ambiental, em nosa plataforma você irá
+                encontrar diversos conteúdos relacionados a preservação ambiental e pipipopopo </h5>
+        </div>
+        <div class="card">
+            <div class="container">
+                <img th:src="@{/img/logo.png}" alt="Avatar" style="width:50%">
+                <p>Architect & Engineer</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <img th:src="@{/img/logo.png}" alt="Avatar" style="width:50%">
+                <p>Architect & Engineer</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="container">
+                <img th:src="@{/img/logo.png}" alt="Avatar" style="width:50%">
+                <p>Architect & Engineer</p>
+            </div>
+        </div>
+        <div class="buttons">
             <a href="/cooperadores/cadastro" class="btn btn-primary">Cadastra-se</a>
-            <a href="/saibamais" class="btn btn-warning">Saiba Mais</a>
+            <a href="/saibamais" class="btn btn-success">Saiba Mais</a>
         </div>
-    
+
+        <div class="back-to-top">
+            <a href="#">➤</a>
+        </div>
+
+        <a href="https://api.whatsapp.com/send?phone=+5547997035216 aleatório&text=Oi eu sou o Goku!" target="_blank"> <img
+            id="wpp"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1021px-WhatsApp.svg.png"
+            alt="icone whatsapp"></a>
+
     </main>
     <footer th:include="layout :: footer"></footer>
- </body>
+</body>
+
 </html>
