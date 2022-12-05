@@ -16,8 +16,5 @@ public class FuncionarioServiceImpl implements FuncionarioService{
     @Override
     public List<Funcionario> getAll() {
         return repositorio.findAll();
-    }
-
-    
-    
+    }  
 }

@@ -42,5 +42,11 @@ public class CooperadorServiceImpl
     public List<Cooperador> findByNome(String nome) {
         return repositorio.findByNomeIgnoreCaseContaining(nome);
     }
+/* 
+    //Foi criado para tentar inserir a quantidade.
+    @Override
+    public Cooperador save2(Cooperador cooperador) {
+        return repositorio.save(cooperador);
+    } */
 
 }

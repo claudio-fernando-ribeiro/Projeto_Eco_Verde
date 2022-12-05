@@ -42,7 +42,17 @@ public class CooperadorController {
         dados.put("cooperador",umCooperador);
         return new ModelAndView("cooperador/formCadastro",dados);
     }
-    
+
+
+
+    @GetMapping("/material/{id}")
+    public ModelAndView material(@PathVariable("id") long id){
+        var umCooperador = service.findById(id);
+        HashMap<String,Object> dados = new HashMap<>();
+        dados.put("cooperador",umCooperador);
+        return new ModelAndView("materialRecebido/index",dados);
+    }
+
     @PostMapping(params = "formCadastro")
     public ModelAndView save(@Validated Cooperador cooperador,
                             BindingResult bindingResult){
@@ -55,6 +65,21 @@ public class CooperadorController {
         service.save(cooperador);
         return new ModelAndView("redirect:/local");
     }
+
+    //Criei esse para tentar inserir o campo quantidade ao acionar o botão "Acionar resíduos", mas sem sucesso por enquanto.
+
+/*     @PostMapping(params = "materialRecebido/index")
+    public ModelAndView save2(@Validated Cooperador cooperador,
+                            BindingResult bindingResult){
+
+        if(bindingResult.hasErrors()){
+            HashMap<String,Object> dados = new HashMap<>();
+            dados.put("cooperador", cooperador);
+            return new ModelAndView("materialRecebido/index",dados);
+        }
+        service.save(cooperador);
+        return new ModelAndView("redirect:/local");
+    } */
 
     @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") long id){

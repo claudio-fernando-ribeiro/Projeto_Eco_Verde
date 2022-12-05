@@ -43,7 +43,16 @@
                 class="alert alert-danger"></p>
             </div>
 
-        <button type="submit" class="btn btn-primary js-sucesso" id="btnenviar">Enviar</button>
+            <div class="form-group">
+                <label for="txtpontos">Pontos acumulados:</label>
+                <input type="text" th:field="*{pontos}" 
+                    class="form-control" id="txtpontos">
+                <p th:if="${#fields.hasErrors('pontos')}"
+                th:errors="*{pontos}"
+                class="alert alert-danger"></p>
+            </div>
+
+        <button type="submit" class="btn btn-primary" id="btnenviar">Enviar</button>
 
     </form> 
 </main>

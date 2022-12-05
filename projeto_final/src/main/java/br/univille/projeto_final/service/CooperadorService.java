@@ -6,6 +6,7 @@ import br.univille.projeto_final.entity.Cooperador;
 public interface CooperadorService {
     List<Cooperador> getAll();
     Cooperador save (Cooperador cooperador);
+    //Cooperador save2 (Cooperador cooperador);
     Cooperador findById (long id);
     void delete (long id);
     List<Cooperador> findByNome(String nome);
