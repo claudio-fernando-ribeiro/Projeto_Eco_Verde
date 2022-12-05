@@ -7,5 +7,4 @@ import br.univille.projeto_final.entity.Local;
 
 @Repository
 public interface LocalRepository extends JpaRepository<Local, Long>{
-    
 }

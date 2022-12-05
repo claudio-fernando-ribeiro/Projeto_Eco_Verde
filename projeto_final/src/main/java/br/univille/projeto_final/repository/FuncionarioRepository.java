@@ -7,5 +7,4 @@ import br.univille.projeto_final.entity.Funcionario;
 
 @Repository
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
-    
 }

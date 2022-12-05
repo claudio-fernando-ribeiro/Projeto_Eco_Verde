@@ -1,7 +1,6 @@
 package br.univille.projeto_final.entity;
 
 import java.util.ArrayList;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,5 +33,4 @@ public class Funcionario {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
 }

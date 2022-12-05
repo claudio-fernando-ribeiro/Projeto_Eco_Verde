@@ -1,10 +1,8 @@
 package br.univille.projeto_final.service.impl;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import br.univille.projeto_final.entity.Funcionario;
 import br.univille.projeto_final.repository.FuncionarioRepository;
 import br.univille.projeto_final.service.FuncionarioService;
@@ -18,8 +16,5 @@ public class FuncionarioServiceImpl implements FuncionarioService{
     @Override
     public List<Funcionario> getAll() {
         return repositorio.findAll();
-    }
-
-    
-    
+    }  
 }
