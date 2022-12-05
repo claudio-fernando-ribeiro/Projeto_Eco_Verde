@@ -25,10 +25,11 @@ form input, form button{
     border-radius: 0.2em;
     border: none;
 }
-
+/*FOnte importadas*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap%27');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap%27');
 
+/*referencia da imagem tam - pois no bootstap é chato/complicado de alterar.*/
 nav div a img {
     height: 15vh;
 }
@@ -41,9 +42,10 @@ div .navbar-nav a{
 
 body {
     color: #000000;
+    /*                                transparencia da imagem*/
     background-image: linear-gradient(#ffffffa4, rgba(90, 90, 90, 0.634)), url("https://cdn.pixabay.com/photo/2017/07/19/08/50/gardening-2518377_960_720.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    background-repeat: no-repeat; /*Não repetir*/
+    background-size: cover; /*cobrir tela toda*/
+    background-attachment: fixed; /*posição da imagem no rolar */
+    background-position: center; /*posição - centralizada*/
 }
