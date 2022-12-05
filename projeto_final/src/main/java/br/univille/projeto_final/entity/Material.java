@@ -42,5 +42,4 @@ public class Material {
     public void setQuantidadePorFuncionario(Cooperador quantidadePorFuncionario) {
         this.quantidadePorFuncionario = quantidadePorFuncionario;
     }
-
 }

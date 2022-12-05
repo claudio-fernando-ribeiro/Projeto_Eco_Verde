@@ -3,6 +3,7 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
 <head th:include="layout :: head">
+<link rel="stylesheet" th:href="layout.css"> 
    
 </head>
 <body>
@@ -42,15 +43,26 @@
                 class="alert alert-danger"></p>
             </div>
 
-        <button type="submit" class="btn btn-primary js-sucesso" id="btnenviar">Enviar</button>
+            <div class="form-group">
+                <label for="txtpontos">Pontos acumulados:</label>
+                <input type="text" th:field="*{pontos}" 
+                    class="form-control" id="txtpontos">
+                <p th:if="${#fields.hasErrors('pontos')}"
+                th:errors="*{pontos}"
+                class="alert alert-danger"></p>
+            </div>
+
+        <button type="submit" class="btn btn-primary" id="btnenviar">Enviar</button>
 
     </form> 
 </main>
     <footer th:include="layout :: footer"></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!--Coloquei -->
     <script th:src="@{/webjars/jquery/3.6.1/dist/jquery.min.js}"></script>
     <script th:src="@{/scriptCadastro.js}"></script>
+
     </body>
 </html>
