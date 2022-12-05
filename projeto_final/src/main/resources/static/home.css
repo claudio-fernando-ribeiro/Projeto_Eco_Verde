@@ -42,10 +42,12 @@ body {
       'img p';
  }
 
+ /*COntainer*/
  .post-card{
   background-color: #ffffffa4;
  }
 
+ /*Botão retornarao topo*/
  .back-to-top a {
   text-decoration: none;
   position: fixed;
@@ -65,6 +67,7 @@ body {
   z-index: 10;
 }
 
+/*Botão Whats - conf*/
 #wpp {
   width: 80px;
   position: fixed;
