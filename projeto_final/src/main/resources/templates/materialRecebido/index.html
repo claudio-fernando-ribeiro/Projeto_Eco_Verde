@@ -6,31 +6,29 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
+    
+    
+        <form th:action="@{/materialRecebido/(index)}"
+        method="POST" th:object="${cooperador}"> 
+<!--Isso sai depois -->
+        <div> 
+            <input type="text" th:field="*{id}"> 
+        </div>
+<!--Isso sai depois -->
+        <div>
+            <input type="text" th:field="*{nome}">
+        </div>
+    
+        <div class="form-group">
+            <label for="txtquantidadeResiduo">Quantidade:</label>
+            <input type="text" th:field="*{quantidadeResiduo}" 
+                class="form-control" id="txtquantidadeResiduo">
+            <p th:if="${#fields.hasErrors('quantidadeResiduo')}"
+                th:errors="*{quantidadeResiduo}"
 
-         <form th:action="@{//(formCadastro)}"
-            method="POST" th:object="${cooperador}"> 
-
-            <input type="hidden" th:field="*{id}"> 
-            <input type="text" th:field="*{nome}"> 
-
-            <div class="form-group">
-                <label for="txtquantidade">Quantidade:</label> 
-                 <input type="text" th:field="*{quantidadeResiduo}" 
-
-                    class="form-control" id="txtquantidade">
-                <p th:if="${#fields.hasErrors('quantidadeResiduo')}"
-                    th:errors="*{quantidadeResiduo}"
-                    class="alert alert-danger"></p>
-            </div>
-
-            <div class="form-group">
-                <label for="txtpontos">Pontos acumulados:</label>
-                <input type="text" th:field="*{pontos}" 
-                    class="form-control" id="txtpontos">
-                <p th:if="${#fields.hasErrors('pontos')}"
-                th:errors="*{pontos}"
                 class="alert alert-danger"></p>
             </div>
+            
 
         <button type="submit" class="btn btn-primary" id="btnenviar">Enviar</button>
     </form> 
