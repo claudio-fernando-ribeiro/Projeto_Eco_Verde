@@ -3,8 +3,6 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
 <head th:include="layout :: head">
-<link rel="stylesheet" th:href="layout.css"> 
-   
 </head>
 <body>
     <nav th:replace="layout :: menu"></nav>
@@ -16,7 +14,7 @@
             <input type="hidden" th:field="*{id}"> 
 
             <div class="form-group">
-                <label for="txtnome">Nome:</label> 
+                <label for="txtnome">Nome:sadasdasdsadasd</label> 
                  <input type="text" th:field="*{nome}" 
                     class="form-control" id="txtnome">
                 <p th:if="${#fields.hasErrors('nome')}"

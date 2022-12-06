@@ -23,9 +23,5 @@ public class FuncionarioController {
     public ModelAndView index(){
         var listaCooperadores = service.getAll();
         return new ModelAndView("funcionario/index", "listaCooperadores", listaCooperadores);
-    }
-    
-
-    
-    
+    } 
 }
