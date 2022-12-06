@@ -17,9 +17,9 @@
         <div>
             <input type="text" th:field="*{nome}">
         </div>
-
+    
         <div class="form-group">
-            <label for="txtcpf">Quantidade:</label>
+            <label for="txtquantidadeResiduo">Quantidade:</label>
             <input type="text" th:field="*{quantidadeResiduo}" 
                 class="form-control" id="txtquantidadeResiduo">
             <p th:if="${#fields.hasErrors('quantidadeResiduo')}"
