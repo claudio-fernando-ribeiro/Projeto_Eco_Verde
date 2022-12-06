@@ -43,8 +43,6 @@ public class CooperadorController {
         return new ModelAndView("cooperador/formCadastro",dados);
     }
 
-
-
     @GetMapping("/material/{id}")
     public ModelAndView material(@PathVariable("id") long id){
         var umCooperador = service.findById(id);
