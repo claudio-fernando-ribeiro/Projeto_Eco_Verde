@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    <head th:include="layout :: head"></head>
+
+    <body>
+        <nav th:replace="layout :: menu"></nav>
+        <main class="container">
+            <a href="/residuos/novo" 
+                class="btn btn-primary">Novo</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="umResiduo : ${listaResiduos}">
+                        <td th:text="${umResiduo.id}"></td>
+                        <td th:text="${umResiduo.nome}"></td>
+                        <td>
+                            <a th:href="@{'/residuos/alterar/' + ${umResiduo.id}}"
+                                class="btn btn-warning">Alterar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+        <footer th:include="layout :: footer"></footer>
+    </body>
+</html>

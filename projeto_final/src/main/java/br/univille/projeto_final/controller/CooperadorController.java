@@ -44,31 +44,8 @@ public class CooperadorController {
     }
 
 
-
-/*     @GetMapping("/material/{id}")
-    public ModelAndView material(@PathVariable("id") long id){
-        var umCooperador = service.findById(id);
-        HashMap<String,Object> dados = new HashMap<>();
-        dados.put("cooperador",umCooperador);
-        return new ModelAndView("material/index",dados);
-    } */
-
     @PostMapping(params = "formCadastro")
     public ModelAndView save(@Validated Cooperador cooperador,
                             BindingResult bindingResult){
 
-        if(bindingResult.hasErrors()){
-            HashMap<String,Object> dados = new HashMap<>();
-            dados.put("cooperador", cooperador);
-            return new ModelAndView("cooperador/formCadastro",dados);
-        }
-        service.save(cooperador);
-        return new ModelAndView("redirect:/local");
-    }
-
-    @GetMapping("/delete/{id}")
-    public ModelAndView delete(@PathVariable("id") long id){
-        service.delete(id);
-        return new ModelAndView("redirect:/funcionarios");
-    }
-}
+    } 
