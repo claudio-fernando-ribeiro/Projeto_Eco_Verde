@@ -34,6 +34,7 @@
                     <td th:text="${umCooperador.cpf}"></td>
                     <td th:text="${umCooperador.email}"></td>
                     <td th:text="${umCooperador.pontos}"></td>
+                    <td th:text="${umCooperador.tipoMaterial}"></td>
                     <td th:text="${umCooperador.quantidadeResiduo}"></td>
                     <td>
                      
@@ -41,7 +42,7 @@
                         <a href="" class="btn btn-success btn-sm">Adicionar Resíduos</a> 
                         -->
 
-                        <a th:href="@{'/cooperadores/material/' + ${umCooperador.id}}" class="btn btn-success btn-sm">Adicionar Resíduos</a> 
+                        <a th:href="@{'/materiais' + ${umCooperador.id}}" class="btn btn-success btn-sm">Adicionar Resíduos</a> 
                         <!-- "@{'/cooperadores/somar/' + ${umCooperador.id.somar}}" -->
                         <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}" class="btn btn-warning btn-sm">Alterar</a>
                         <button class="btn btn-danger btn-sm js-delete" th:data-id="${umCooperador.id}">Excluir</button>

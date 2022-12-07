@@ -30,7 +30,9 @@
                     <td th:text="${umCooperador.cpf}"></td>
                     <td th:text="${umCooperador.email}"></td>
                     <td th:text="${umCooperador.pontos}"></td>
+                    <td th:text="${umCooperador.tipoMaterial}"></td>
                     <td th:text="${umCooperador.quantidadeResiduo}"></td>
+                    </td>
                     <td>
                         <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}" 
                             class="btn btn-warning">Alterar</a>
