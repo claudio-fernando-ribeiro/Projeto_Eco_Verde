@@ -27,9 +27,9 @@ public class MaterialServiceImpl implements MaterialService{
 
     @Override
     public Material findById(long id) {
-        var resultado = repositorio.findById(id);
-        if(resultado.isPresent()){
-            return resultado.get();
+        var result = repositorio.findById(id);
+        if(result.isPresent()){
+            return result.get();
         }
         return new Material();
     }
@@ -38,13 +38,5 @@ public class MaterialServiceImpl implements MaterialService{
     public void delete(long id) {
         repositorio.deleteById(id);
         
-    }
-
-    @Override
-    public List<Material> findByNome(String nome) {
-        return repositorio.findByNomeIgnoreCaseContaining(nome);
     } 
-
-    
-    
 }

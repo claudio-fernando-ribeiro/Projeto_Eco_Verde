@@ -13,13 +13,13 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
-    private ArrayList listaMaterialRecebido;
+    private ArrayList listaMaterial;
 
-    public ArrayList getListaMaterialRecebido() {
-        return listaMaterialRecebido;
+    public ArrayList getListaMaterial() {
+        return listaMaterial;
     }
-    public void setListaMaterialRecebido(ArrayList listaMaterialRecebido) {
-        this.listaMaterialRecebido = listaMaterialRecebido;
+    public void setListaMaterial(ArrayList listaMaterial) {
+        this.listaMaterial = listaMaterial;
     }
     public long getId() {
         return id;

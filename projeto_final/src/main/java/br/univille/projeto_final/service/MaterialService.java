@@ -9,6 +9,6 @@ public interface MaterialService {
     Material save (Material material);
     Material findById (long id);
     void delete(long id);
-    List<Material> findByNome(String nome);
+    //List<Material> findByNome(String nome);
 
 }

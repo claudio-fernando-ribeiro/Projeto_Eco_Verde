@@ -7,7 +7,10 @@ import br.univille.projeto_final.entity.Material;
 
 //PROF WALTER
 @Repository
-public interface MaterialRepository extends JpaRepository<Material, Long>{
-    List<Material> findByNomeIgnoreCaseContaining(String nome);
-    
+
+public interface MaterialRepository 
+        extends JpaRepository<Material,Long>{
+
+/*     List<Material> findByNomeIgnoreCaseContaining(String nome);
+ */  
 }

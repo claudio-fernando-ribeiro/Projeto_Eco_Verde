@@ -30,8 +30,17 @@ public class Cooperador {
     private String pontos;
 
     private String quantidadeResiduo;
+
+    private String tipoMaterial;
+
     
 
+    public String getTipoMaterial() {
+        return tipoMaterial;
+    }
+    public void setTipoMaterial(String tipoMaterial) {
+        this.tipoMaterial = tipoMaterial;
+    }
     public String getQuantidadeResiduo() { //teste para ver se funciona a quantidade
         return quantidadeResiduo;
     }
