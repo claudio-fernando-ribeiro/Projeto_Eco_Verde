@@ -15,7 +15,7 @@ import br.univille.projeto_final.entity.Cooperador;
 import br.univille.projeto_final.service.CooperadorService;
 
 @Controller
-@RequestMapping("/cooperadores")
+@RequestMapping("")
 public class CooperadorController {
 
     @Autowired
@@ -43,13 +43,15 @@ public class CooperadorController {
         return new ModelAndView("cooperador/formCadastro",dados);
     }
 
-    @GetMapping("/material/{id}")
+
+
+/*     @GetMapping("/material/{id}")
     public ModelAndView material(@PathVariable("id") long id){
         var umCooperador = service.findById(id);
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("cooperador",umCooperador);
         return new ModelAndView("material/index",dados);
-    }
+    } */
 
     @PostMapping(params = "formCadastro")
     public ModelAndView save(@Validated Cooperador cooperador,
