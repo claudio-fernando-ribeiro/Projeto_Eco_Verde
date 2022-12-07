@@ -27,23 +27,11 @@ public class Cooperador {
     @NotBlank (message = "Email não pode ser em branco")
     private String email;
 
-    private long pontos;
+    private String pontos;
 
-    private long quantidadeResiduo;
+    private String quantidadeResiduo;
     
-    public long getPontos() {
-        return pontos;
-    }
-    public void setPontos(long pontos) {
-        this.pontos = pontos;
-    }
-    public long getQuantidadeResiduo() {
-        return quantidadeResiduo;
-    }
-    public void setQuantidadeResiduo(long quantidadeResiduo) {
-        this.quantidadeResiduo = quantidadeResiduo;
-    }
-    /* 
+
     public String getQuantidadeResiduo() { //teste para ver se funciona a quantidade
         return quantidadeResiduo;
     }
@@ -57,7 +45,7 @@ public class Cooperador {
     public void setPontos(String pontos) {
         this.pontos = pontos;
     }
-    */
+    
     //cooperador -> material
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Cooperador quantidadeCooperador;

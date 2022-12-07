@@ -8,6 +8,7 @@ public interface MaterialService {
     List<Material> getAll();
     Material save (Material material);
     Material findById (long id);
-    void delete (long id);
+    void delete(long id);
     List<Material> findByNome(String nome);
+
 }

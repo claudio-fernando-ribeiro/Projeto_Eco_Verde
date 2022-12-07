@@ -13,3 +13,18 @@ public class ResiduosNeutralizados {
         return new ModelAndView("residuosNeutralizados/index");
     }
 }
+
+/* import br.univille.projeto_final.entity.Cooperador;
+
+@Controller
+@RequestMapping("/residuosNeutralizados")
+public class ResiduosNeutralizados {
+    @GetMapping
+    public ModelAndView cadastro(){
+        
+        Cooperador cooperador = new Cooperador();
+
+        
+        return new ModelAndView("cooperador/formCadastro", "cooperador", cooperador);
+    }
+} */

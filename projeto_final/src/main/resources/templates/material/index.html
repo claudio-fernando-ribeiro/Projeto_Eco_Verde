@@ -6,9 +6,9 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
-    
-    
-        <form th:action="@{/materialRecebido/(index)}"
+        <a href="/materiais/novo" 
+                class="btn btn-primary">Novo</a>
+        <form th:action="@{/material/(index)}"
         method="POST" th:object="${cooperador}"> 
 <!--Isso sai depois -->
         <div> 
