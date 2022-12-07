@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import br.univille.projeto_final.entity.Material;
 import br.univille.projeto_final.service.MaterialService;
 
@@ -20,11 +19,8 @@ public class MaterialController {
 
     @GetMapping
     public ModelAndView index(){
-
         var listaMateriais = service.getAll();
-
         return new ModelAndView("material/index", "listaMateriais", listaMateriais);
-
     }
 
     @GetMapping("/novo")
@@ -32,7 +28,6 @@ public class MaterialController {
             var novoMaterial = new Material();
             return new ModelAndView("material/form", "material", novoMaterial);
         } 
-    
 
     @PostMapping(params = "form")
     public ModelAndView save(Material material){ 
@@ -51,5 +46,4 @@ public class MaterialController {
         service.delete(id);
         return new ModelAndView("redirect:/material");
     } 
-
 }

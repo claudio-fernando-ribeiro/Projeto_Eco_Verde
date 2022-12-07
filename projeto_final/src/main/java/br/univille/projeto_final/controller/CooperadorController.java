@@ -48,7 +48,7 @@ public class CooperadorController {
         var umCooperador = service.findById(id);
         HashMap<String,Object> dados = new HashMap<>();
         dados.put("cooperador",umCooperador);
-        return new ModelAndView("materialRecebido/index",dados);
+        return new ModelAndView("material/index",dados);
     }
 
     @PostMapping(params = "formCadastro")
