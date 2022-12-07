@@ -31,12 +31,21 @@ public class Cooperador {
 
     private String quantidadeResiduo;
     
+
     public String getQuantidadeResiduo() { //teste para ver se funciona a quantidade
         return quantidadeResiduo;
     }
     public void setQuantidadeResiduo(String quantidadeResiduo) { //teste para ver se funciona a quantidade
         this.quantidadeResiduo = quantidadeResiduo;
     }
+
+    public String getPontos() {
+        return pontos;
+    }
+    public void setPontos(String pontos) {
+        this.pontos = pontos;
+    }
+    
     //cooperador -> material
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Cooperador quantidadeCooperador;
@@ -81,10 +90,5 @@ public class Cooperador {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    public String getPontos() {
-        return pontos;
-    }
-    public void setPontos(String pontos) {
-        this.pontos = pontos;
-    }
+    
 }

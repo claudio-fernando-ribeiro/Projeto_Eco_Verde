@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="htpp://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="pt-BR">
+<head th:include="layout :: head"></head>
+<body>
+    <nav th:replace="layout :: menu"></nav>
+    <main class="container">
+        <a href="/materiais/novo" 
+                class="btn btn-primary">Novo</a>
+        <form th:action="@{/material/(index)}"
+        method="POST" th:object="${cooperador}"> 
+<!--Isso sai depois -->
+        <div> 
+            <input type="text" th:field="*{id}"> 
+        </div>
+<!--Isso sai depois -->
+        <div>
+            <input type="text" th:field="*{nome}">
+        </div>
+    
+        <div class="form-group">
+            <label for="txtquantidadeResiduo">Quantidade:</label>
+            <input type="text" th:field="*{quantidadeResiduo}" 
+                class="form-control" id="txtquantidadeResiduo">
+            <p th:if="${#fields.hasErrors('quantidadeResiduo')}"
+                th:errors="*{quantidadeResiduo}"
+
+                class="alert alert-danger"></p>
+            </div>
+            
+
+        <button type="submit" class="btn btn-primary" id="btnenviar">Enviar</button>
+    </form> 
+</main>
+    <footer th:include="layout :: footer"></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--Coloquei -->
+    <script th:src="@{/webjars/jquery/3.6.1/dist/jquery.min.js}"></script>
+    <script th:src="@{/scriptCadastro.js}"></script>
+
+    </body>
+</html>

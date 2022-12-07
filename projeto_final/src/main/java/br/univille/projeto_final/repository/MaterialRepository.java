@@ -1,14 +1,13 @@
 package br.univille.projeto_final.repository;
 
 import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
 import br.univille.projeto_final.entity.Material;
 
+//PROF WALTER
 @Repository
-public interface MaterialRecebidoRepository extends JpaRepository<Material, Integer> {
-    List<Material> findByNomeIgnoreCaseContaining(@Param("nome") String nome);
+public interface MaterialRepository extends JpaRepository<Material, Long>{
+    List<Material> findByNomeIgnoreCaseContaining(String nome);
+    
 }

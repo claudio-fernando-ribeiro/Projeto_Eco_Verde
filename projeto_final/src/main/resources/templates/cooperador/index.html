@@ -44,25 +44,23 @@
     <div class="modal" tabindex="-1" id="modalcooperador">
         <div class="modal-dialog">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Excluir Cooperador</h5>
-                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Tem certeza da exlusão?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="btncancelar" 
-                    data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
-                
-
-            </div>
+                <div class="modal-header">
+                    <h5 class="modal-title">Excluir Cooperador</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza da exlusão?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="btncancelar" 
+                        data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
+                </div>
             </div>
         </div>
     </div>
     <footer th:include="layout :: footer"></footer>
     <script th:src="@{/scriptcoop.js}"></script>
-    <script th:src="@{/webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script> 
+    <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script> 
  </body>
 </html>
