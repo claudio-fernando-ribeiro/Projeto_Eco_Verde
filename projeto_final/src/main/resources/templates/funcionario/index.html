@@ -11,7 +11,7 @@
 
         <br>
         <div>
-            <a href="/cooperadores/cadastro" class="btn btn-primary">Novo cooperador</a>
+            <a href="/cadastro" class="btn btn-primary">Novo cooperador</a>
         </div>
         <br>
 
@@ -44,7 +44,7 @@
 
                         <a th:href="@{'/materiais' + ${umCooperador.id}}" class="btn btn-success btn-sm">Adicionar Resíduos</a> 
                         <!-- "@{'/cooperadores/somar/' + ${umCooperador.id.somar}}" -->
-                        <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}" class="btn btn-warning btn-sm">Alterar</a>
+                        <a th:href="@{'/alterar/' + ${umCooperador.id}}" class="btn btn-warning btn-sm">Alterar</a>
                         <button class="btn btn-danger btn-sm js-delete" th:data-id="${umCooperador.id}">Excluir</button>
 
                     </td>

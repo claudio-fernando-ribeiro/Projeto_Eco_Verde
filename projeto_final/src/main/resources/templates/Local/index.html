@@ -9,11 +9,70 @@
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
 
-        <a href="/cooperadores/cadastro" class="btn btn-primary">Novo cooperador</a>
+        <a href="/cadastro" class="btn btn-primary">Novo cooperador</a>
 
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Ver locais de entrega
-          </button>
+        <h3>Lista dos locais de coleta</h3>
+        <table class="table">
+            <thead>
+                <th>Cidade</th>
+                <th>Bairro</th>
+                <th>Rua</th>
+                <th>Número</th>
+                <th>Ponto de referência</th>
+                <th>Ver no mapa</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Joinville</td>
+                    <td>Aventureiro</td>
+                    <td>Wily Schossland</td>
+                    <td>123</td>
+                    <td>Esquina Valmir José da Silva</td>
+                    <td><a href="https://goo.gl/maps/bnL87KZaggC1dNf6A" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                    <td>Joinville</td>
+                    <td>Zona Industrial Norte</td>
+                    <td>Rua paulo Malschitzski</td>
+                    <td>10</td>
+                    <td>Univille Universidade/CHB</td>
+                    <td><a href="https://goo.gl/maps/eg2AuVmAVKvToUSJ8" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                    <td>Joinville</td>
+                    <td>Costa e Silva</td>
+                    <td>Jacob</td>
+                    <td>218</td>
+                    <td>Junto a Arena Costa e Silva Society</td>
+                    <td><a href="https://goo.gl/maps/8GWUpu7ju353fACu6" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                    <td>Joinville</td>
+                    <td>Centro</td>
+                    <td>Dr. Tijucas</td>
+                    <td>572</td>
+                    <td>Ao lado da Pichau Informática</td>
+                    <td><a href="https://goo.gl/maps/vfbqFBFiLfPvw4Ss6" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                    <td>Joinville</td>
+                    <td>Itaum</td>
+                    <td>Barra Velha</td>
+                    <td>403</td>
+                    <td>Ao lado da Gasparin Imóveis</td>
+                    <td><a href="https://goo.gl/maps/Y5YwnuFSo1CBdc9Q8" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                </tr>
+                <tr>
+                    <td>Joinville</td>
+                    <td>Itinga</td>
+                    <td>Joel Elias Steil</td>
+                    <td>555</td>
+                    <td>Junto a Escola Francisco Jablonsky</td>
+                    <td><a href="https://goo.gl/maps/hgSky5i2JgCXeXoF9" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+
 
     </main>
 
@@ -25,67 +84,6 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <h3>Lista dos locais de coleta</h3>
-                <table class="table">
-                    <thead>
-                        <th>Cidade</th>
-                        <th>Bairro</th>
-                        <th>Rua</th>
-                        <th>Número</th>
-                        <th>Ponto de referência</th>
-                        <th>Ver no mapa</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Joinville</td>
-                            <td>Aventureiro</td>
-                            <td>Wily Schossland</td>
-                            <td>123</td>
-                            <td>Esquina Valmir José da Silva</td>
-                            <td><a href="https://goo.gl/maps/bnL87KZaggC1dNf6A" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Joinville</td>
-                            <td>Zona Industrial Norte</td>
-                            <td>Rua paulo Malschitzski</td>
-                            <td>10</td>
-                            <td>Univille Universidade/CHB</td>
-                            <td><a href="https://goo.gl/maps/eg2AuVmAVKvToUSJ8" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Joinville</td>
-                            <td>Costa e Silva</td>
-                            <td>Jacob</td>
-                            <td>218</td>
-                            <td>Junto a Arena Costa e Silva Society</td>
-                            <td><a href="https://goo.gl/maps/8GWUpu7ju353fACu6" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Joinville</td>
-                            <td>Centro</td>
-                            <td>Dr. Tijucas</td>
-                            <td>572</td>
-                            <td>Ao lado da Pichau Informática</td>
-                            <td><a href="https://goo.gl/maps/vfbqFBFiLfPvw4Ss6" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Joinville</td>
-                            <td>Itaum</td>
-                            <td>Barra Velha</td>
-                            <td>403</td>
-                            <td>Ao lado da Gasparin Imóveis</td>
-                            <td><a href="https://goo.gl/maps/Y5YwnuFSo1CBdc9Q8" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>Joinville</td>
-                            <td>Itinga</td>
-                            <td>Joel Elias Steil</td>
-                            <td>555</td>
-                            <td>Junto a Escola Francisco Jablonsky</td>
-                            <td><a href="https://goo.gl/maps/hgSky5i2JgCXeXoF9" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
-                        </tr>
-                    </tbody>
-                </table>
         
             </div>
             <div class="modal-footer">

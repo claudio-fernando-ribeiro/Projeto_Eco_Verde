@@ -10,7 +10,7 @@
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
 
-        <a href="/cooperadores/cadastro" class="btn btn-primary">Cadastre-se</a>
+        <a href="/cadastro" class="btn btn-primary">Cadastre-se</a>
         <table class="table" id="tabcooperadores">
             <thead>
                 <tr>
@@ -34,7 +34,7 @@
                     <td th:text="${umCooperador.quantidadeResiduo}"></td>
                     </td>
                     <td>
-                        <a th:href="@{'/cooperadores/alterar/' + ${umCooperador.id}}" 
+                        <a th:href="@{'/alterar/' + ${umCooperador.id}}" 
                             class="btn btn-warning">Alterar</a>
                         <button class="btn btn-danger js-delete" th:data-id="${umCooperador.id}">Excluir</button>
                     </td>

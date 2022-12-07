@@ -13,7 +13,7 @@
         let botaoSim = $(this);
         let id = botaoSim.attr("data-id");
         $.ajax({
-            url: "/cooperadores/delete/" + id,
+            url: "/delete/" + id,
             method: "GET",
             success: function(){
                 window.location.href="/funcionarios";
