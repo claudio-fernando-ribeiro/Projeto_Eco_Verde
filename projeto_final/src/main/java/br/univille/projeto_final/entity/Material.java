@@ -1,6 +1,8 @@
 package br.univille.projeto_final.entity;
 
 import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,10 +17,9 @@ public class Material {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date data;
-    private int quantidade;
+    @Column(length = 1000,unique = true)
+    private String nome;
+    private long quantidade;
 
     public long getId() {
         return id;
@@ -26,16 +27,34 @@ public class Material {
     public void setId(long id) {
         this.id = id;
     }
-    public Date getData() {
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public long getQuantidade() {
+        return quantidade;
+    }
+    public void setQuantidade(long quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    //IMPLEMENTAR DATA
+    /* @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date data; */
+    
+
+
+
+
+    /* public Date getData() {
         return data;
     }
     public void setData(Date data) {
         this.data = data;
     }
-    public int getQuantidade() {
-        return quantidade;
-    }
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
+    
+    } */
 }

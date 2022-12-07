@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.univille.projeto_final.entity.Material;
-import br.univille.projeto_final.repository.MaterialRecebidoRepository;
+import br.univille.projeto_final.repository.MaterialRepository;
 import br.univille.projeto_final.service.MaterialService;
 
 @Service
 public class MaterialServiceImpl implements MaterialService{
 
     @Autowired
-    private MaterialRecebidoRepository repositorio;
+    private MaterialRepository repositorio;
 
     @Override
     public List<Material> getAll() {
@@ -27,7 +27,7 @@ public class MaterialServiceImpl implements MaterialService{
 
     @Override
     public Material findById(long id) {
-        var resultado = repositorio.findById((int) id);
+        var resultado = repositorio.findById(id);
         if(resultado.isPresent()){
             return resultado.get();
         }
@@ -36,11 +36,15 @@ public class MaterialServiceImpl implements MaterialService{
 
     @Override
     public void delete(long id) {
-        repositorio.deleteById((int) id);
+        repositorio.deleteById(id);
+        
     }
 
     @Override
     public List<Material> findByNome(String nome) {
         return repositorio.findByNomeIgnoreCaseContaining(nome);
-    }
+    } 
+
+    
+    
 }
