@@ -47,7 +47,4 @@ public class MaterialController {
         return new ModelAndView("redirect:/funcionarios");
     }
 
-    Teste
 }
-
-teste
