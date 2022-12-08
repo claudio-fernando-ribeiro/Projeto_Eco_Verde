@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap%27');
 
 nav div a img {
-    height: 15vh;
+    height: 10vh;
 }
 
 div .navbar-nav a{
@@ -11,3 +11,12 @@ div .navbar-nav a{
     text-align: center;
 }
 
+
+.btn-queroParticipar {
+    border: none;
+    background-color: #45BF55;
+    color: #f7f7f7;
+  }
+.btn-queroParticipar:hover {
+  background-color: #168039;
+}

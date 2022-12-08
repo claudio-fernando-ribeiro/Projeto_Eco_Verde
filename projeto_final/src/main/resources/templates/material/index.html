@@ -25,8 +25,6 @@
             <table class="table" id="tabmateriais">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Nome</th>
                         <th>Quantidade</th>
                         <th>Tipo de Residuo</th>
                         <th></th>
@@ -34,16 +32,14 @@
                 </thead>
                 <tbody>
                     <tr th:each="umMaterial : ${listaMateriais}">
-                        <td th:text="${umMaterial.id}"></td>
-                        <td th:text="${umMaterial.nome}"></td>
                         <td th:text="${umMaterial.quantidade}"></td>
                         <td th:text="${umMaterial.residuotipo?.nome}"></td>
                         <td>
-                            <a th:href="@{'/materiais/alterar/' + 
+<!--                             <a th:href="@{'/materiais/alterar/' + 
                                 ${umMaterial.id}" class="btn btn-warning">Alterar</a>
                             <button class="btn btn-danger js-delete" 
                                 th:data-id="${umMaterial.id}">Excluir</button>
-                        </td>
+ -->                        </td>
                     </tr>
                 </tbody>
             </table>
