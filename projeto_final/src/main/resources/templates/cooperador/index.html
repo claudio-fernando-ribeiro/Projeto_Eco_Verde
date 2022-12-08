@@ -19,7 +19,7 @@
                     <th>CPF/CNPJ</th>
                     <th>Email</th>
                     <th>Pontos acumulados</th>
-                    <th>Quantidade</th>
+                   <!--  <th>Quantidade</th> -->
                     <th></th>
                 </tr>
             </thead>
@@ -30,8 +30,7 @@
                     <td th:text="${umCooperador.cpf}"></td>
                     <td th:text="${umCooperador.email}"></td>
                     <td th:text="${umCooperador.pontos}"></td>
-                    <td th:text="${umCooperador.tipoMaterial}"></td>
-                    <td th:text="${umCooperador.quantidadeResiduo}"></td>
+            <!--         <td th:text="${umCooperador.quantidade}"></td> -->
                     </td>
                     <td>
                         <a th:href="@{'/alterar/' + ${umCooperador.id}}" 

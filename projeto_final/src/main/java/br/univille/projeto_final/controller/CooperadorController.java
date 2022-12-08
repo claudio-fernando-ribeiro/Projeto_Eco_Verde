@@ -13,13 +13,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.univille.projeto_final.entity.Cooperador;
 import br.univille.projeto_final.service.CooperadorService;
+import br.univille.projeto_final.service.ResiduoService;
 
 @Controller
-@RequestMapping("/cooperadores")
+@RequestMapping("")
 public class CooperadorController {
 
     @Autowired
-    private CooperadorService service; 
+    private CooperadorService service;
+    @Autowired
+    private ResiduoService tipoResiduo;
+
     
     @GetMapping
     public ModelAndView index(){
@@ -30,7 +34,9 @@ public class CooperadorController {
     @GetMapping("/cadastro")
     public ModelAndView cadastro(){
         var cooperador = new Cooperador();
+        var listaResiduos = tipoResiduo.getAll();
         HashMap<String,Object> dados = new HashMap<>();
+        dados.put("listaResiduos", listaResiduos);
         dados.put("cooperador",cooperador);
         return new ModelAndView("cooperador/formCadastro", dados);
     }
@@ -38,26 +44,21 @@ public class CooperadorController {
     @GetMapping("/alterar/{id}")
     public ModelAndView alterar(@PathVariable("id") long id){
         var umCooperador = service.findById(id);
+        var listaResiduos = tipoResiduo.getAll();
         HashMap<String,Object> dados = new HashMap<>();
+        dados.put("listaResiduos", listaResiduos);
         dados.put("cooperador",umCooperador);
         return new ModelAndView("cooperador/formCadastro",dados);
-    }
-
-    @GetMapping("/material/{id}")
-    public ModelAndView material(@PathVariable("id") long id){
-        var umCooperador = service.findById(id);
-        HashMap<String,Object> dados = new HashMap<>();
-        dados.put("cooperador",umCooperador);
-        return new ModelAndView("material/index",dados);
     }
 
     @PostMapping(params = "formCadastro")
     public ModelAndView save(@Validated Cooperador cooperador,
                             BindingResult bindingResult){
-
         if(bindingResult.hasErrors()){
+            var listaResiduos = tipoResiduo.getAll();
             HashMap<String,Object> dados = new HashMap<>();
             dados.put("cooperador", cooperador);
+            dados.put("listaResiduos", listaResiduos);
             return new ModelAndView("cooperador/formCadastro",dados);
         }
         service.save(cooperador);

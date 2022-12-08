@@ -23,7 +23,6 @@ public class ResiduoController {
         var listaResiduos = service.getAll();
         return new ModelAndView("residuo/index", "listaResiduos",
              listaResiduos);
-
     }
 
     @GetMapping("/novo")
@@ -44,10 +43,9 @@ public class ResiduoController {
         return new ModelAndView("residuo/form", "residuo", umResiduo);
     }
     
-    /* @GetMapping("/delete/{id}")
+    @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") long id){
         service.delete(id);
         return new ModelAndView("redirect:/residuo");
-    }  */
-
+    }
 }

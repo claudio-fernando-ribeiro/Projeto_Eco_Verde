@@ -10,16 +10,17 @@
             <a href="/materiais/novo" class="btn btn-primary">Novo</a>
            
             <form th:action="@{/material/(index)}"
-            method="POST" th:object="${material}"> 
+            method="POST" th:object="${cooperador}"> 
            
-            <!--Isso sai depois -->
-        <div> 
+            
+       <!--  <div> 
             <input type="text" th:field="*{id}"> 
         </div>
-            <!--Isso sai depois -->
+            
         <div>
             <input type="text" th:field="*{nome}">
-        </div>
+        </div> -->
+
 
             <table class="table" id="tabmateriais">
                 <thead>
@@ -39,7 +40,7 @@
                         <td th:text="${umMaterial.residuotipo?.nome}"></td>
                         <td>
                             <a th:href="@{'/materiais/alterar/' + 
-                                ${umMaterial.id}}" class="btn btn-warning">Alterar</a>
+                                ${umMaterial.id}" class="btn btn-warning">Alterar</a>
                             <button class="btn btn-danger js-delete" 
                                 th:data-id="${umMaterial.id}">Excluir</button>
                         </td>
