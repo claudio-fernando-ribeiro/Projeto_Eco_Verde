@@ -7,46 +7,19 @@
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
 
-         <form th:action="@{/(formCadastro)}"
+         <form th:action="@{/(cadastro)}"
             method="POST" th:object="${cooperador}"> 
 
-            <input type="hidden" th:field="*{id}"> 
+            <input type="text" th:field="*{id}"> 
 
             <div class="form-group">
-                <label for="txtnome">Nome:</label> 
-                 <input type="text" th:field="*{nome}" 
-                    class="form-control" id="txtnome">
-                <p th:if="${#fields.hasErrors('nome')}"
-                    th:errors="*{nome}"
-                    class="alert alert-danger"></p>
-            </div>
-
-            <div class="form-group">
-                <label for="txtcpf">CPF:</label>
-                <input type="text" th:field="*{cpf}" 
-                    class="form-control" id="txtcpf">
-                <p th:if="${#fields.hasErrors('cpf')}"
-                    th:errors="*{cpf}"
-                    class="alert alert-danger"></p>
-            </div> 
-    
-            <div class="form-group">
-                <label for="txtemail">Email:</label>
-                <input type="text" th:field="*{email}" 
-                    class="form-control" id="txtemail">
-                <p th:if="${#fields.hasErrors('email')}"
-                th:errors="*{email}"
-                class="alert alert-danger"></p>
-            </div>
-
-<!--             <div class="form-group">
                 <label for="txtquantidade">Quantidade:</label>
                 <input type="text" th:field="*{quantidade}" 
                     class="form-control" id="txtquantidade">
                 <p th:if="${#fields.hasErrors('quantidade')}"
                 th:errors="*{quantidade}"
                 class="alert alert-danger"></p>
-            </div> -->
+            </div>
 
             <div class="form-group">
                 <label>Tipo de resíduo:</label>

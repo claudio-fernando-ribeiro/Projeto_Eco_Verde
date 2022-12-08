@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="htpp://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
-
 <head th:include="layout :: head"></head>
 <link rel="stylesheet" th:href="funcionario.css">
 
@@ -22,9 +21,9 @@
                     <th>Nome</th>
                     <th>CPF/CNPJ</th>
                     <th>Email</th>
-                    <th>Pontos acumulados</th>
-                    <th>Quantidade</th>
-                    <th></th>
+                    <th>Tipo do resíduo</th>
+                    <!-- <th>Quantidade</th> -->
+                    <th>Pontos</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,17 +32,12 @@
                     <td th:text="${umCooperador.nome}"></td>
                     <td th:text="${umCooperador.cpf}"></td>
                     <td th:text="${umCooperador.email}"></td>
-                    <td th:text="${umCooperador.pontos}"></td>
-                    <td th:text="${umCooperador.tipoMaterial}"></td>
-                    <td th:text="${umCooperador.quantidadeResiduo}"></td>
+                    <td th:text="${umCooperador.tipoResiduo.nome}"></td>
+                    <!-- <td th:text="${umCooperador.quantidade}"></td> -->
+                    <td></td>
                     <td>
                      
-                        <!--0
-                        <a href="" class="btn btn-success btn-sm">Adicionar Resíduos</a> 
-                        -->
-
-                        <a th:href="@{'cooperadores/materiais/' + ${umCooperador.id}}" class="btn btn-success btn-sm">Adicionar Resíduos</a> 
-                        <!-- "@{'/cooperadores/somar/' + ${umCooperador.id.somar}}" -->
+                        <a th:href="@{'/formResiduo/' + ${umCooperador.id}}" class="btn btn-success btn-sm">Adicionar Resíduos</a> 
                         <a th:href="@{'/alterar/' + ${umCooperador.id}}" class="btn btn-warning btn-sm">Alterar</a>
                         <button class="btn btn-danger btn-sm js-delete" th:data-id="${umCooperador.id}">Excluir</button>
 
@@ -71,38 +65,11 @@
             </div>
         </div>
     </div>
-
-
-
-    <div class="modal" tabindex="-1" id="modalResiduo">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Adicionar resíduos</h5>
-                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Tem certeza da exlusão?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="btncancelar"
-                        data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" id="btnsim">Sim</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
     <footer th:include="layout :: footer"></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script th:src="@{/scriptcoop.js}"></script>
-    <script th:src="@{/scriptRes.js}"></script>
+
 </body>
 
 </html>

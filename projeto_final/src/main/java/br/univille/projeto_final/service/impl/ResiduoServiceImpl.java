@@ -32,6 +32,16 @@ public class ResiduoServiceImpl implements ResiduoService{
             return resultado.get();
         }
         return new Residuo();
+    }
+
+    @Override
+    public void delete(long id) {
+        repositorio.deleteById(id);
+        
+    }
+
+    @Override
+    public List<Residuo> findByNome(String nome) {
+        return repositorio.findByNomeIgnoreCaseContaining(nome);
     }  
-    
 }

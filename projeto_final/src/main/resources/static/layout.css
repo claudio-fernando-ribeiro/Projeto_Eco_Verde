@@ -8,7 +8,7 @@ nav {
 
 /* Mudei aqui (tamanho de 13.5 para 15), porque estava dando uma mudança no tamanho da imagem quando navegava entre os links */
 nav div a img {
-    height: 15.0vh; 
+    height: 15vh; 
 }
 
 div .navbar-nav a{
@@ -16,3 +16,4 @@ div .navbar-nav a{
     font-size: 1.3rem;
     text-align: center;
 }
+
