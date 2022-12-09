@@ -15,6 +15,9 @@ import br.univille.projeto_final.entity.Cooperador;
 import br.univille.projeto_final.service.CooperadorService;
 import br.univille.projeto_final.service.ResiduoService;
 
+
+/*TESTE */
+
 @Controller
 @RequestMapping("")
 public class CooperadorController {
