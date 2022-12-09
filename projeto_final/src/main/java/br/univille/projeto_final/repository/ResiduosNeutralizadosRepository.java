@@ -8,3 +8,5 @@ import br.univille.projeto_final.entity.ResiduosNeutralizados;
 @Repository
 public interface ResiduosNeutralizadosRepository extends JpaRepository<ResiduosNeutralizados, String>{
 }
+
+teste teste

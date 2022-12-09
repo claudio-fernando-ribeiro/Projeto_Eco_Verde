@@ -31,12 +31,12 @@ form input, form button{
 
 /*referencia da imagem tam - pois no bootstap é chato/complicado de alterar.*/
 nav div a img {
-    height: 15vh;
+    height: 10vh;
 }
 
 div .navbar-nav a{
     font-family: 'Poppins', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-align: center;
 }
 
@@ -48,4 +48,9 @@ body {
     background-size: cover; /*cobrir tela toda*/
     background-attachment: fixed; /*posição da imagem no rolar */
     background-position: center; /*posição - centralizada*/
+}
+
+.btn{
+    border-radius: 2px;
+    font-size: .75rem;
 }

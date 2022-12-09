@@ -19,7 +19,7 @@ public class Cooperador {
     @NotBlank(message = "Nome não pode estar em branco")
     private String nome;
 
-    @Column(length = 3000, nullable = false)
+    @Column(length = 1000, nullable = false)
     @NotBlank (message = "CPF não pode ser em branco")
     private String cpf;
 
@@ -27,77 +27,57 @@ public class Cooperador {
     @NotBlank (message = "Email não pode ser em branco")
     private String email;
 
-    private String pontos;
-
-    private String quantidadeResiduo;
-
-    private String tipoMaterial;
-
-    
-
-    public String getTipoMaterial() {
-        return tipoMaterial;
-    }
-    public void setTipoMaterial(String tipoMaterial) {
-        this.tipoMaterial = tipoMaterial;
-    }
-    public String getQuantidadeResiduo() { //teste para ver se funciona a quantidade
-        return quantidadeResiduo;
-    }
-    public void setQuantidadeResiduo(String quantidadeResiduo) { //teste para ver se funciona a quantidade
-        this.quantidadeResiduo = quantidadeResiduo;
-    }
-
-    public String getPontos() {
-        return pontos;
-    }
-    public void setPontos(String pontos) {
-        this.pontos = pontos;
-    }
-    
-    //cooperador -> material
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
-    private Cooperador quantidadeCooperador;
+    private Residuo tipoResiduo;
 
-    //cooperador ->local 
-    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
-    private Cooperador listaDeLocais;
+    private int pontos;
 
-    public Cooperador getQuantidadeCooperador() {
-        return quantidadeCooperador;
-    }
-    public void setQuantidadeCooperador(Cooperador quantidadeCooperador) {
-        this.quantidadeCooperador = quantidadeCooperador;
-    }
-    public Cooperador getListaDeLocais() {
-        return listaDeLocais;
-    }
-    public void setListaDeLocais(Cooperador listaDeLocais) {
-        this.listaDeLocais = listaDeLocais;
-    }
     public long getId() {
         return id;
     }
+
     public void setId(long id) {
         this.id = id;
     }
+
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
+
     public String getCpf() {
         return cpf;
     }
+
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Residuo getTipoResiduo() {
+        return tipoResiduo;
+    }
+
+    public void setTipoResiduo(Residuo tipoResiduo) {
+        this.tipoResiduo = tipoResiduo;
+    }
+
+    public int getPontos() {
+        return pontos;
+    }
+
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
     }
     
 }

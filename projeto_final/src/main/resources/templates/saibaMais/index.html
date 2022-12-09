@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="htpp://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
-
-<head th:include="layout :: head">
-</head>
-<link rel="stylesheet" th:href="saibaMais.css"> <!-- Esse css é somente da página home -->
+<head th:include="layout :: head"></head>
+<link rel="stylesheet" th:href="saibaMais.css">
 
 <body>
     <nav th:replace="layout :: menu"></nav>
-    <main>
+    <main class="container">
+
         <h1>Sustentabilidade</h1>
 
-        <div class="texto">
+        <div class="card">
+            <div class="container">
+            <p>Hoje a decomposição de resíduos orgânicos é responsável por mais de 49% do metano (CH4) emitido a
+                    atmosfera. O CH4 é cerca de 27 vezes mais prejudicial a camada de ozônio do que o gás carbônico (CO2),
+                    ou seja, cada unidade de CH4 equivale a 27 unidades de CO2. Desta forma CH4 tem se tornado um dos
+                    principais responsáveis pelo aquecimento global, e todas as catástrofes que decorrem dele.</p>
             <p>Hoje a decomposição de resíduos orgânicos é responsável por mais de 49% do metano (CH4) emitido a
                 atmosfera. O CH4 é cerca de 27 vezes mais prejudicial a camada de ozônio do que o gás carbônico (CO2),
                 ou seja, cada unidade de CH4 equivale a 27 unidades de CO2. Desta forma CH4 tem se tornado um dos
@@ -26,6 +30,9 @@
                 região, transformando o mundo e vida das pessoas.</p>
             <p>Além disso você vai passa a participar de um programa de pontos que posteriormente poderão ser trocados
                 por diversos produtos. Venha fazer parte da mudança que buscamos para o mundo. Cadastra-se.</p>
+        </div>
+        <div class="d-grid gap-2">
+            <a href="/cadastro" class="btn btn-primary btn-lg">Quero participar</a>
         </div>
     </main>
     <footer th:include="layout :: footer"></footer>

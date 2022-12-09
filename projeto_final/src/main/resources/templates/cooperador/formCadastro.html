@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="htpp://www.thymeleaf.org"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="htpp://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
 <head th:include="layout :: head">
 </head>
@@ -8,7 +7,9 @@
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
 
-         <form th:action="@{/cooperadores/(formCadastro)}"
+        <br>
+
+         <form th:action="@{/(formCadastro)}"
             method="POST" th:object="${cooperador}"> 
 
             <input type="hidden" th:field="*{id}"> 
@@ -40,13 +41,29 @@
                 class="alert alert-danger"></p>
             </div>
 
-        <button type="submit" class="btn btn-primary" id="btnenviar">Enviar</button>
+<!--             <div class="form-group">
+                <label for="txtquantidade">Quantidade:</label>
+                <input type="text" th:field="*{quantidade}" 
+                    class="form-control" id="txtquantidade">
+                <p th:if="${#fields.hasErrors('quantidade')}"
+                th:errors="*{quantidade}"
+                class="alert alert-danger"></p>
+            </div> -->
+
+            <div class="form-group">
+                <label>Tipo de resíduo:</label>
+                <select  class="form-select" th:field="*{tipoResiduo}">
+                    <option th:each="umResiduo : ${listaResiduos}"
+                    th:text="${umResiduo.nome}"
+                    th:value="${umResiduo.id}"> </option>
+                </select>
+
+        <button type="submit" class="btn btn-success" id="btnenviar">Enviar</button>
 
     </form> 
 </main>
     <footer th:include="layout :: footer"></footer>
     <script th:src="@{/webjars/jquery/3.6.1/dist/jquery.min.js}"></script>
-    <script th:src="@{/scriptCadastro.js}"></script>
-    <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script> 
+    <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
     </body>
 </html>
