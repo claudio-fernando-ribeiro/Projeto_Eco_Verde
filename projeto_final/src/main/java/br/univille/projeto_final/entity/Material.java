@@ -21,9 +21,19 @@ public class Material {
     private String nome;
     @Column(length = 3000)
     private float quantidade;
+    @ManyToOne
+    private Cooperador cooperador;
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Residuo residuotipo;
     
+
+
+    public Cooperador getCooperador() {
+        return cooperador;
+    }
+    public void setCooperador(Cooperador cooperador) {
+        this.cooperador = cooperador;
+    }
     public long getId() {
         return id;
     }
