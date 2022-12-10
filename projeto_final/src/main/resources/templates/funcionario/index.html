@@ -9,8 +9,10 @@
     <main class="container">
 
         <br>
-        <div>
-            <a href="/cadastro" class="btn btn-primary">Novo cooperador</a>
+        <div class="button">
+            <a href="/cadastro" class="btn btn-primary btn-lg">Novo cooperador</a>
+            <a href="/materiais" class="btn btn-lista btn-lg">Lista de entregas</a>
+            <a href="/residuos/novo" class="btn btn-adicionar btn-lg">Criar novo resíduo</a>
         </div>
         <br>
 
@@ -34,7 +36,7 @@
                     <td th:text="${umCooperador.email}"></td>
                     <td th:text="${umCooperador.tipoResiduo?.nome}"></td>
                     <td th:text="${totalQtds[__${stat.index}__]}"></td>
-                    <td></td>
+                    <td th:text="${totalQtds[__${stat.index}__]}"></td>
                     <td>
                      
                         <a th:href="@{'/materiais/novo/' + ${umCooperador.id}}" class="btn btn-success btn-sm">Adicionar Resíduos</a> 
@@ -45,8 +47,7 @@
                 </tr>
             </tbody>
         </table>
-        <a href="/materiais" class="btn btn-primary">Lista de entregas</a>
-        <a href="/residuos/novo" class="btn btn-primary">Adicionar resíduos</a>
+
     </main>
 
     <div class="modal" tabindex="-1" id="modalcooperador">

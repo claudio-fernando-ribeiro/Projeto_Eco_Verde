@@ -10,7 +10,6 @@ import br.univille.projeto_final.entity.Material;
 public interface MaterialRepository 
         extends JpaRepository<Material,Long>{
           List<Material> findByNomeIgnoreCaseContaining(String nome);
-
           @Query("select sum(m.quantidade) from Material m where cooperador_id = ?1")
           Integer somaQuantidade(long idCooperador);
 

@@ -12,7 +12,49 @@ body {
     background-position: center; /*posição - centralizada*/
 }
 
+.button{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 42em;
+}
+
+
 .btn{
     border-radius: 2px;
     font-size: .75rem;
 }
+
+.btn-primary {
+    border: none;
+    background-color: #45BF55;
+    color: #f7f7f7;
+    font-size: 13px;
+  }
+.btn-primary:hover {
+  background-color: #168039;
+  color: #f7f7f7;
+}
+.btn-lista{
+  border: none;
+  background-color: #3a94e4;
+  color: #f7f7f7;
+  font-size: 13px;
+}
+.btn-lista:hover {
+  background-color: #207dce;
+  color: #f7f7f7;
+}
+.btn-adicionar{
+  border: none;
+  background-color: #e4630d;
+  color: #f7f7f7;
+  font-size: 13px;
+}
+.btn-adicionar:hover {
+  background-color: #a05421;
+  color: #f7f7f7;
+}
+
+
+
+

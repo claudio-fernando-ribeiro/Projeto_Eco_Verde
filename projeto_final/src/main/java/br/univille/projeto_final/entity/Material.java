@@ -1,8 +1,5 @@
 package br.univille.projeto_final.entity;
 
-
-
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +18,7 @@ public class Material {
     private String nome;
     @Column(length = 3000)
     private float quantidade;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Cooperador cooperador;
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Residuo residuotipo;
