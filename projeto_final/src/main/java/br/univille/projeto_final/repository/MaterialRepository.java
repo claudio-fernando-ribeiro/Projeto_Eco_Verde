@@ -12,6 +12,6 @@ public interface MaterialRepository
           List<Material> findByNomeIgnoreCaseContaining(String nome);
 
           @Query("select sum(m.quantidade) from Material m where cooperador_id = ?1")
-          int somaQuantidade(long idCooperador);
+          Integer somaQuantidade(long idCooperador);
 
 }

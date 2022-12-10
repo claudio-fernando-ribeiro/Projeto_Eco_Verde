@@ -41,8 +41,7 @@ public class MaterialServiceImpl implements MaterialService{
     }
 
     @Override
-    public int somaQuantidade(long idCooperador) {
+    public Integer somaQuantidade(long idCooperador) {
         return repositorio.somaQuantidade(idCooperador);
     } 
 }
-teste
