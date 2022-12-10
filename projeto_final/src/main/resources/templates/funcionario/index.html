@@ -22,18 +22,18 @@
                     <th>CPF/CNPJ</th>
                     <th>Email</th>
                     <th>Tipo do resíduo</th>
-                    <!-- <th>Quantidade</th> -->
+                    <th>Quantidade</th>
                     <th>Pontos</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="umCooperador : ${listaCooperadores}">
+                <tr th:each="umCooperador, stat : ${listaCooperadores}">
                     <td th:text="${umCooperador.id}"></td>
                     <td th:text="${umCooperador.nome}"></td>
                     <td th:text="${umCooperador.cpf}"></td>
                     <td th:text="${umCooperador.email}"></td>
-                    <td th:text="${umCooperador.tipoResiduo.nome}"></td>
-                    <!-- <td th:text="${umCooperador.quantidade}"></td> -->
+                    <td th:text="${umCooperador.tipoResiduo?.nome}"></td>
+                    <td th:text="${totalQtds[__${stat.index}__]}"></td>
                     <td></td>
                     <td>
                      

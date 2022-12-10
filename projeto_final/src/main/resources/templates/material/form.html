@@ -10,19 +10,21 @@
              <form th:action="@{/materiais/(form)}" 
                 method="POST" th:object="${material}"> 
 
-               <input type="text" th:field="*{id}"
+               <input type="hidden" th:field="${material.id}"
                         class="form-control">
+
+                <input type="hidden" th:field="${material.cooperador.id}">
 
                  <div class="form-group">
                     <label for="valorquantidade">Quantidade:</label>
-                    <input type="valor" th:field="*{quantidade}"
+                    <input type="number" th:field="${material.quantidade}"
                         class="form-control" id="txtquantidade">
                 </div>
 
                 <div class="form-group">
                     <label for="cbresiduotipo">Tipo Residuo:</label>
                     <select class="form-select"
-                        th:field="*{residuotipo}">
+                        th:field="${material.residuotipo}">
                         <option th:each="umResiduo : ${listaResiduos}"
                          th:value="${umResiduo.id}"
                          th:text="${umResiduo.nome}"></option>

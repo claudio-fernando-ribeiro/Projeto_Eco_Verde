@@ -9,9 +9,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import br.univille.projeto_final.entity.Cooperador;
 import br.univille.projeto_final.entity.Material;
+import br.univille.projeto_final.entity.Residuo;
+import br.univille.projeto_final.service.CooperadorService;
 import br.univille.projeto_final.service.MaterialService;
 import br.univille.projeto_final.service.ResiduoService;
+import ch.qos.logback.core.joran.spi.NoAutoStart;
 
 @Controller
 @RequestMapping("/materiais")
@@ -23,24 +28,36 @@ public class MaterialController {
     @Autowired
     private ResiduoService residuoService;
 
+    @Autowired
+    private CooperadorService cooperadorService;
+
     @GetMapping
     public ModelAndView index(){
         var listaMateriais = service.getAll();
         return new ModelAndView("material/index", "listaMateriais", listaMateriais);
     }
 
-    @GetMapping("/novo")
-        public ModelAndView novo(){
-            var novoMaterial = new Material();
-            var listaResiduos = residuoService.getAll();
-            HashMap<String,Object> dados = new HashMap<>();
-            dados.put("listaResiduos",listaResiduos);
-            dados.put("material",novoMaterial);
-            return new ModelAndView("material/form",dados);
-        } 
+    @GetMapping("/novo/{idcooperador}")
+    public ModelAndView novo(@PathVariable("idcooperador") long idcooperador){
+        var novoMaterial = new Material();
+        var listaResiduos = residuoService.getAll();
+        HashMap<String,Object> dados = new HashMap<>();
+        
+        Cooperador coop = cooperadorService.findById(idcooperador);
+        novoMaterial.setCooperador(coop);
+
+        dados.put("listaResiduos",listaResiduos);
+        dados.put("material",novoMaterial);
+        
+        return new ModelAndView("material/form",dados);
+    } 
 
     @PostMapping(params = "form")
     public ModelAndView save(Material material){ 
+
+        Residuo residuo = residuoService.findyById(1l);
+        material.setResiduotipo(residuo);
+        
         service.save(material);
         return new ModelAndView("redirect:/materiais");
         }    

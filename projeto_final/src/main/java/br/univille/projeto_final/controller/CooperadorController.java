@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.univille.projeto_final.entity.Cooperador;
+import br.univille.projeto_final.entity.Residuo;
 import br.univille.projeto_final.service.CooperadorService;
 import br.univille.projeto_final.service.ResiduoService;
 
@@ -64,6 +65,9 @@ public class CooperadorController {
             dados.put("listaResiduos", listaResiduos);
             return new ModelAndView("cooperador/formCadastro",dados);
         }
+
+        Residuo residuo = tipoResiduo.findyById(1l);
+        cooperador.setTipoResiduo(residuo);
         service.save(cooperador);
         return new ModelAndView("redirect:/local");
     }
