@@ -77,8 +77,4 @@ public class CooperadorController {
         service.delete(id);
         return new ModelAndView("redirect:/funcionarios");
     }
-}
-
-git teste
-
 
