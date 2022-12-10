@@ -9,9 +9,18 @@
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
 
-        
-
         <a href="/cadastro" class="btn btn-primary">Novo cooperador</a>
+
+        <div id="liveToast" class="toast text-bg-success align-items-center w-50" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <h5><strong class="me-auto">Cadastro realizado com sucesso</strong></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              <h5>Parabéns, cadastro realizado com sucesso!!!
+              Abaixo você tem a lista dos locais de entrega. Clique no ícone a direita para visualizar no mapa.</h5>
+            </div>
+          </div>
 
         <h3>Lista dos locais de coleta</h3>
         <table class="table">
@@ -74,17 +83,7 @@
                 </tr>
             </tbody>
         </table>
-        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-              <img src="..." class="rounded me-2" alt="...">
-              <strong class="me-auto">Bootstrap</strong>
-              <small>11 mins ago</small>
-              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-              Hello, world! This is a toast message.
-            </div>
-          </div>
+
     </main>
     <footer th:include="layout :: footer"></footer>
     <script src="https://kit.fontawesome.com/2856634515.js" crossorigin="anonymous"></script>

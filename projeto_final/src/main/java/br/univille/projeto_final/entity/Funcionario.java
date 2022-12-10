@@ -1,4 +1,4 @@
-package br.univille.projeto_final.entity;
+/* package br.univille.projeto_final.entity;
 
 import java.util.ArrayList;
 import javax.persistence.Entity;
@@ -13,14 +13,7 @@ public class Funcionario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
-    private ArrayList listaMaterial;
 
-    public ArrayList getListaMaterial() {
-        return listaMaterial;
-    }
-    public void setListaMaterial(ArrayList listaMaterial) {
-        this.listaMaterial = listaMaterial;
-    }
     public long getId() {
         return id;
     }
@@ -33,4 +26,4 @@ public class Funcionario {
     public void setNome(String nome) {
         this.nome = nome;
     }
-}
+} */
