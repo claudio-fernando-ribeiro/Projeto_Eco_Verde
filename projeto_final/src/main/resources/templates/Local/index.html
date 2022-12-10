@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="htpp://www.thymeleaf.org"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="htpp://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
+
 <head th:include="layout :: head">
     <link rel="stylesheet" th:href="style.css">
 </head>
+
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
 
-        
 
+        <br>
         <a href="/cadastro" class="btn btn-primary">Novo cooperador</a>
-
+        <br>
+        <br>
         <h3>Lista dos locais de coleta</h3>
         <table class="table">
             <thead>
@@ -30,7 +32,8 @@
                     <td>Wily Schossland</td>
                     <td>123</td>
                     <td>Esquina Valmir José da Silva</td>
-                    <td><a href="https://goo.gl/maps/bnL87KZaggC1dNf6A" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                    <td><a href="https://goo.gl/maps/bnL87KZaggC1dNf6A" target="_blank"><i
+                                class="fa-solid fa-map-location-dot"></i></a></td>
                 </tr>
                 <tr>
                     <td>Joinville</td>
@@ -38,7 +41,8 @@
                     <td>Rua paulo Malschitzski</td>
                     <td>10</td>
                     <td>Univille Universidade/CHB</td>
-                    <td><a href="https://goo.gl/maps/eg2AuVmAVKvToUSJ8" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                    <td><a href="https://goo.gl/maps/eg2AuVmAVKvToUSJ8" target="_blank"><i
+                                class="fa-solid fa-map-location-dot"></i></a></td>
                 </tr>
                 <tr>
                     <td>Joinville</td>
@@ -46,7 +50,8 @@
                     <td>Jacob</td>
                     <td>218</td>
                     <td>Junto a Arena Costa e Silva Society</td>
-                    <td><a href="https://goo.gl/maps/8GWUpu7ju353fACu6" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                    <td><a href="https://goo.gl/maps/8GWUpu7ju353fACu6" target="_blank"><i
+                                class="fa-solid fa-map-location-dot"></i></a></td>
                 </tr>
                 <tr>
                     <td>Joinville</td>
@@ -54,7 +59,8 @@
                     <td>Dr. Tijucas</td>
                     <td>572</td>
                     <td>Ao lado da Pichau Informática</td>
-                    <td><a href="https://goo.gl/maps/vfbqFBFiLfPvw4Ss6" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                    <td><a href="https://goo.gl/maps/vfbqFBFiLfPvw4Ss6" target="_blank"><i
+                                class="fa-solid fa-map-location-dot"></i></a></td>
                 </tr>
                 <tr>
                     <td>Joinville</td>
@@ -62,7 +68,8 @@
                     <td>Barra Velha</td>
                     <td>403</td>
                     <td>Ao lado da Gasparin Imóveis</td>
-                    <td><a href="https://goo.gl/maps/Y5YwnuFSo1CBdc9Q8" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                    <td><a href="https://goo.gl/maps/Y5YwnuFSo1CBdc9Q8" target="_blank"><i
+                                class="fa-solid fa-map-location-dot"></i></a></td>
                 </tr>
                 <tr>
                     <td>Joinville</td>
@@ -70,33 +77,35 @@
                     <td>Joel Elias Steil</td>
                     <td>555</td>
                     <td>Junto a Escola Francisco Jablonsky</td>
-                    <td><a href="https://goo.gl/maps/hgSky5i2JgCXeXoF9" target="_blank"><i class="fa-solid fa-map-location-dot"></i></a></td>
+                    <td><a href="https://goo.gl/maps/hgSky5i2JgCXeXoF9" target="_blank"><i
+                                class="fa-solid fa-map-location-dot"></i></a></td>
                 </tr>
             </tbody>
         </table>
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-              <img src="..." class="rounded me-2" alt="...">
-              <strong class="me-auto">Bootstrap</strong>
-              <small>11 mins ago</small>
-              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">Bootstrap</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body">
-              Hello, world! This is a toast message.
+                Hello, world! This is a toast message.
             </div>
-          </div>
+        </div>
     </main>
     <footer th:include="layout :: footer"></footer>
     <script src="https://kit.fontawesome.com/2856634515.js" crossorigin="anonymous"></script>
     <script th:src="@{/webjars/jquery/3.6.1/dist/jquery.min.js}"></script>
-    <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script> 
+    <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
     <script type="application/javascript">
-        (function(){
+        (function () {
             const toastLiveExample = document.getElementById('liveToast')
             const toast = new bootstrap.Toast(toastLiveExample)
             toast.show()
         })();
-        
+
     </script>
- </body>
+</body>
+
 </html>
