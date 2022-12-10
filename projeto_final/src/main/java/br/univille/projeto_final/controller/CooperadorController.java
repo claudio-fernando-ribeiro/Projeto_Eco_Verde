@@ -78,6 +78,3 @@ public class CooperadorController {
         return new ModelAndView("redirect:/funcionarios");
     }
 }
-
-
-
