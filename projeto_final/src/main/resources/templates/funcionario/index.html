@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="htpp://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
+
 <head th:include="layout :: head"></head>
 <link rel="stylesheet" th:href="funcionario.css">
 
@@ -15,7 +16,11 @@
             <a href="/residuos/novo" class="btn btn-adicionar btn-lg">Criar novo resíduo</a>
         </div>
         <br>
-
+        <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+            <input name="consulta" id="txt_consulta" placeholder="Consultar" type="text" class="form-control">
+        </div>
+        <br>
         <table class="table" id="tabcooperadores">
             <thead>
                 <tr>
@@ -38,8 +43,9 @@
                     <td th:text="${totalQtds[__${stat.index}__]}"></td>
                     <td th:text="${totalQtds[__${stat.index}__]}"></td>
                     <td>
-                     
-                        <a th:href="@{'/materiais/novo/' + ${umCooperador.id}}" class="btn btn-success btn-sm">Adicionar Resíduos</a> 
+
+                        <a th:href="@{'/materiais/novo/' + ${umCooperador.id}}" class="btn btn-success btn-sm">Adicionar
+                            Resíduos</a>
                         <a th:href="@{'/alterar/' + ${umCooperador.id}}" class="btn btn-warning btn-sm">Alterar</a>
                         <button class="btn btn-danger btn-sm js-delete" th:data-id="${umCooperador.id}">Excluir</button>
 
@@ -71,6 +77,11 @@
     <footer th:include="layout :: footer"></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
+    <script>
+        $('input#txt_consulta').quicksearch('table#tabcooperadores tbody tr');
+    </script>
     <script th:src="@{/scriptcoop.js}"></script>
 
 </body>
