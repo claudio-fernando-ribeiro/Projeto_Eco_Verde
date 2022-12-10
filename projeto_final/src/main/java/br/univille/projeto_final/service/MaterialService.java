@@ -9,6 +9,7 @@ public interface MaterialService {
     Material save (Material material);
     Material findById (long id);
     void delete(long id);
+    int somaQuantidade(long idCooperador);
     //List<Material> findByNome(String nome);
 
 }

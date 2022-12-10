@@ -38,5 +38,10 @@ public class MaterialServiceImpl implements MaterialService{
     public void delete(long id) {
         repositorio.deleteById(id);
         
+    }
+
+    @Override
+    public int somaQuantidade(long idCooperador) {
+        return repositorio.somaQuantidade(idCooperador);
     } 
 }
