@@ -45,3 +45,4 @@ public class MaterialServiceImpl implements MaterialService{
         return repositorio.somaQuantidade(idCooperador);
     } 
 }
+teste
