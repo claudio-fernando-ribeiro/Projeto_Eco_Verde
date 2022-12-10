@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import br.univille.projeto_final.entity.Residuo;
 import br.univille.projeto_final.service.ResiduoService;
 
@@ -43,6 +42,7 @@ public class ResiduoController {
         return new ModelAndView("residuo/form", "residuo", umResiduo);
     }
     
+/*     Implementar funcionalidade posteriormente */
     @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") long id){
         service.delete(id);

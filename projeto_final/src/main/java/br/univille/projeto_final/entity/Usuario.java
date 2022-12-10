@@ -1,26 +1,18 @@
 package br.univille.projeto_final.entity;
 
-import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Funcionario {
-
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
-    private ArrayList listaMaterial;
+    private String senha;
 
-    public ArrayList getListaMaterial() {
-        return listaMaterial;
-    }
-    public void setListaMaterial(ArrayList listaMaterial) {
-        this.listaMaterial = listaMaterial;
-    }
     public long getId() {
         return id;
     }
@@ -32,5 +24,11 @@ public class Funcionario {
     }
     public void setNome(String nome) {
         this.nome = nome;
+    }
+    public String getSenha() {
+        return senha;
+    }
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
