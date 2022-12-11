@@ -11,7 +11,7 @@ import br.univille.projeto_final.entity.Residuo;
 import br.univille.projeto_final.service.ResiduoService;
 
 @Controller
-@RequestMapping("/residuos")
+@RequestMapping("residuos")
 public class ResiduoController {
 
     @Autowired
@@ -24,7 +24,7 @@ public class ResiduoController {
              listaResiduos);
     }
 
-    @GetMapping("/novo")
+    @GetMapping("novo")
         public ModelAndView novo(){
             var novoResiduo = new Residuo();
             return new ModelAndView("residuo/form", "residuo", novoResiduo);
