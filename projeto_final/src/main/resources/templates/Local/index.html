@@ -9,20 +9,22 @@
 <body>
     <nav th:replace="layout :: menu"></nav>
     <main class="container">
-
+        <br>
         <a href="/cadastro" class="btn btn-primary">Novo cooperador</a>
-
-        <div id="liveToast" class="toast text-bg-success align-items-center w-50" role="alert" aria-live="assertive" aria-atomic="true">
+        <br>
+        <br>
+        <div id="liveToast" class="toast text-bg-success w-100" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-              <h5><strong class="me-auto">Cadastro realizado com sucesso</strong></h5>
-              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                <h5><strong class="text-center">Cadastro realizado com sucesso</strong></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body">
-              <h5>Parabéns, cadastro realizado com sucesso!!!
-              Abaixo você tem a lista dos locais de entrega. Clique no ícone a direita para visualizar no mapa.</h5>
+                <h5 class="text-center">Parabéns, cadastro realizado com sucesso!!!
+                    Abaixo você tem a lista dos locais de entrega. Clique no ícone a direita para visualizar no mapa.
+                </h5>
             </div>
-          </div>
-
+        </div>
+        <br>
         <h3>Lista dos locais de coleta</h3>
         <table class="table">
             <thead>
@@ -104,4 +106,5 @@
 
     </script>
 </body>
+
 </html>
