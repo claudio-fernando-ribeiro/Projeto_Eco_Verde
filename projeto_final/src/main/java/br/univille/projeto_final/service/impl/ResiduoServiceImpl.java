@@ -1,10 +1,8 @@
 package br.univille.projeto_final.service.impl;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import br.univille.projeto_final.entity.Residuo;
 import br.univille.projeto_final.repository.ResiduoRepository;
 import br.univille.projeto_final.service.ResiduoService;

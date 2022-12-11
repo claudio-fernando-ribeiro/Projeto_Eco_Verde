@@ -32,18 +32,8 @@ public class Cooperador {
 
     private int pontos;
 
-    private int quantidade;
-
     public long getId() {
         return id;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
     }
 
     public void setId(long id) {
