@@ -48,11 +48,17 @@ body {
     
   }
 
-  .btn-primary {
-    border: none;
-    background-color: #45BF55;
-    color: #f7f7f7;
+.btn-primary {
+  border: none;
+  background-color: #45BF55;
+  color: #f7f7f7;
   }
 .btn-primary:hover {
   background-color: #168039;
+}
+
+.title{
+font-size: 60px;
+color: #217a1e;
+text-shadow: 0 0 10px #FFFFFF, 24px -8px 5px rgba(13, 46, 17, 0.26);
 }

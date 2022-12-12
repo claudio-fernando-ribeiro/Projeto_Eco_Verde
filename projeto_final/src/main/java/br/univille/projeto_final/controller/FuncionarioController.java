@@ -36,8 +36,6 @@ public class FuncionarioController {
             totalQtds.add(materialService.somaQuantidade(umCoop.getId()));
         }
         dados.put("totalQtds", totalQtds);
-
         return new ModelAndView("funcionario/index", dados);
     } 
-
 }

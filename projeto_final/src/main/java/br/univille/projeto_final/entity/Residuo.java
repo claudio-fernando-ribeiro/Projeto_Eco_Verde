@@ -33,6 +33,4 @@ public class Residuo {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    
 }
