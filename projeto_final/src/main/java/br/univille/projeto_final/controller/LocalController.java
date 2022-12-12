@@ -11,10 +11,8 @@ import br.univille.projeto_final.service.LocalService;
 @Controller
 @RequestMapping("/local")
 public class LocalController {
-
     @Autowired
     private LocalService service;
-
     @GetMapping
     public ModelAndView index(){
         var listaDeLocais = service.getAll();
