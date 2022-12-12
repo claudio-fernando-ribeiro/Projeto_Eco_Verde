@@ -13,6 +13,7 @@
             <a href="/cadastro" class="btn btn-novo btn-lg">Novo cooperador</a>
             <a href="/materiais" class="btn btn-lista btn-lg">Lista de entregas</a>
             <a href="/residuos/novo" class="btn btn-adicionar btn-lg">Criar novo resíduo</a>
+            <a href="/logout" class="btn btn-sair btn-lg">Sair</a>
         </div>
         <br>
         <div class="form-group input-group">
@@ -28,7 +29,6 @@
                     <th>CPF/CNPJ</th>
                     <th>Email</th>
                     <th>Tipo do resíduo</th>
-                    <th>Quantidade</th>
                     <th>Pontos</th>
                 </tr>
             </thead>
@@ -40,9 +40,7 @@
                     <td th:text="${umCooperador.email}"></td>
                     <td th:text="${umCooperador.tipoResiduo?.nome}"></td>
                     <td th:text="${totalQtds[__${stat.index}__]}"></td>
-                    <td th:text="${totalQtds[__${stat.index}__]}"></td>
                     <td>
-
                         <a th:href="@{'/materiais/novo/' + ${umCooperador.id}}" class="btn btn-success btn-sm">Adicionar
                             Resíduos</a>
                         <a th:href="@{'/alterar/' + ${umCooperador.id}}" class="btn btn-warning btn-sm">Alterar</a>

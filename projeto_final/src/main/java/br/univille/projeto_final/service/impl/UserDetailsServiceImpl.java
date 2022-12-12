@@ -22,5 +22,4 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         var umUsuario = repository.findByNome(username);
         return new User(umUsuario.getNome(), umUsuario.getSenha(), new ArrayList<>());
     }
-    
 }

@@ -15,7 +15,8 @@ div .navbar-nav a{
     border: none;
     background-color: #45BF55;
     color: #f7f7f7;
-  }
+}
+
 .btn-queroParticipar:hover {
   background-color: #168039;
 }

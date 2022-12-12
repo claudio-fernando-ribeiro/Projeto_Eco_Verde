@@ -12,7 +12,6 @@ public class LocalServiceImpl implements LocalService {
 
     @Autowired
     private LocalRepository repositorio;
-
     @Override
     public List<Local> getAll() {
         return repositorio.findAll();
