@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="htpp://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <html lang="pt-BR">
-
 <head th:include="layout :: head">
+    <link th:rel="stylesheet" th:href="layout.css"> 
 </head>
 
 <body>
@@ -14,29 +14,31 @@
             <input type="hidden" th:field="*{id}">
 
             <div class="form-group">
-                <label for="txtnome">Nome:</label>
-                <input type="text" th:field="*{nome}" class="form-control" id="txtnome">
+                <label for="txtnome">Nome completo:</label>
+                <input type="text" th:field="*{nome}" class="form-control" id="txtnome" required name="name">
                 <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="alert alert-danger"></p>
             </div>
 
             <div class="form-group">
-                <label for="txtcpf">CPF:</label>
-                <input type="text" th:field="*{cpf}" class="form-control" id="txtcpf">
+                <label for="txtcpf">CPF ou CNPJ:</label>
+                <input type="text" th:field="*{cpf}" class="form-control" id="txtcpf"
+                pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})" \
+    			title="Digite um CPF no formato: xxx.xxx.xxx-xx, ou um CNPJ no formato xx.xxx.xxx/0001-xx">
                 <p th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}" class="alert alert-danger"></p>
             </div>
 
             <div class="form-group">
                 <label for="txtemail">Email:</label>
-                <input type="text" th:field="*{email}" class="form-control" id="txtemail">
+                <input type="email" th:field="*{email}" class="form-control" id="txtemail" required>
                 <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="alert alert-danger"></p>
             </div>
 
-        <button type="submit" class="btn btn-success" id="btnenviar">Enviar</button>
-    </form> 
-</main>
-    <footer th:include="layout :: footer"></footer>
-    <script th:src="@{/webjars/jquery/3.6.1/dist/jquery.min.js}"></script>
-    <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
+            <button type="submit" class="btn btn-success" id="btnenviar">Enviar</button>
+        </form> 
+    </main>
+        <footer th:include="layout :: footer"></footer>
+        <script th:src="@{/webjars/jquery/3.6.1/dist/jquery.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
 </body>
 
 </html>

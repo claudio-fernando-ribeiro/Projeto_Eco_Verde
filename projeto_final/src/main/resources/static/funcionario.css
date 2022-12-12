@@ -24,14 +24,15 @@ body {
     font-size: .75rem;
 }
 
-.btn-primary {
+.btn-novo {
     border: none;
     background-color: #45BF55;
     color: #f7f7f7;
     font-size: 13px;
   }
-.btn-primary:hover {
-  background-color: #168039;
+.btn-novo:hover {
+  border: 2px solid #168039;
+  background-color: #16913f;
   color: #f7f7f7;
 }
 .btn-lista{
@@ -41,6 +42,7 @@ body {
   font-size: 13px;
 }
 .btn-lista:hover {
+  border: 2px solid #0f5796;
   background-color: #207dce;
   color: #f7f7f7;
 }
@@ -51,10 +53,17 @@ body {
   font-size: 13px;
 }
 .btn-adicionar:hover {
-  background-color: #a05421;
+  border: 2px solid #d1763a;
+  background-color: #dd880a;
   color: #f7f7f7;
 }
 
+#txt_consulta{
+  border-radius: 5px;
+  margin-right: 40em;
+  border: 1px solid rgb(22, 105, 14);
+}
 
-
-
+#txt_consulta:hover{
+background-color: rgb(234, 241, 235);
+}
