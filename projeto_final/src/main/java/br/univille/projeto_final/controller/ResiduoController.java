@@ -16,7 +16,6 @@ public class ResiduoController {
 
     @Autowired
     private ResiduoService service;
-
     @GetMapping
     public ModelAndView index(){
         var listaResiduos = service.getAll();

@@ -12,7 +12,7 @@ public class MaterialServiceImpl implements MaterialService{
 
     @Autowired
     private MaterialRepository repositorio;
-
+    
     @Override
     public List<Material> getAll() {
         return repositorio.findAll();

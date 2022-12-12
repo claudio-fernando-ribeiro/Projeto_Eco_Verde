@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-
 @Entity
 public class Material {
     @Id
@@ -18,8 +17,8 @@ public class Material {
     private String nome;
     @Column(length = 3000)
     private float quantidade;
-    //@ManyToOne
-    @ManyToOne(cascade = {CascadeType.ALL, CascadeType.PERSIST})
+    @ManyToOne
+    //@ManyToOne(cascade = {CascadeType.ALL, CascadeType.PERSIST})
     private Cooperador cooperador;
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Residuo residuotipo;

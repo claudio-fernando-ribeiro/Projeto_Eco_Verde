@@ -42,5 +42,4 @@ public class CooperadorServiceImpl
     public List<Cooperador> findByNome(String nome) {
         return repositorio.findByNomeIgnoreCaseContaining(nome);
     }
-
 }

@@ -9,12 +9,12 @@
              <form th:action="@{/materiais/(form)}" 
                 method="POST" th:object="${material}"> 
 
-               <input type="hidden" th:field="${material.id}"
+                <input type="hidden" th:field="${material.id}"
                         class="form-control">
 
                 <input type="hidden" th:field="${material.cooperador.id}">
 
-                 <div class="form-group">
+                <div class="form-group">
                     <label for="valorquantidade">Quantidade:</label>
                     <input type="number" th:field="${material.quantidade}"
                         class="form-control" id="txtquantidade" required>
