@@ -18,7 +18,8 @@ public class Material {
     private String nome;
     @Column(length = 3000)
     private float quantidade;
-    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
+    @ManyToOne
+    //@ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Cooperador cooperador;
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private Residuo residuotipo;

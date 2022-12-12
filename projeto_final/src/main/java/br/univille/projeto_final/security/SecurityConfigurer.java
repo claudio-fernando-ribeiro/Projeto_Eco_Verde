@@ -27,18 +27,18 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter{
         .and()
         .formLogin().permitAll().defaultSuccessUrl("/funcionarios", true)
         .and().logout().permitAll();
-        
+    /*  http
+        .formLogin()
+        .loginPage("/login")
+      .and()
+        .logout()
+        .logoutSuccessUrl("/login"); */
     }
-
     @Bean
     public PasswordEncoder passwordEncoder(){
         return NoOpPasswordEncoder.getInstance();
     }
-
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.userDetailsService(service);
-    }
-
-    
-    
+    }  
 }
